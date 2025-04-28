@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -38,7 +38,9 @@
     <Reference Include="SQLite.NET">
       <HintPath>obj\Debug\SQLite.NET.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.dll</HintPath>
@@ -78,6 +80,12 @@
     <Compile Include="FrmMaestraProducto.Designer.cs">
       <DependentUpon>FrmMaestraProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMaestraProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMaestraProveedores.Designer.cs">
+      <DependentUpon>FrmMaestraProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMaestraRoles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMaestraProducto.resx">
       <DependentUpon>FrmMaestraProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMaestraProveedores.resx">
+      <DependentUpon>FrmMaestraProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMaestraRoles.resx">
       <DependentUpon>FrmMaestraRoles.cs</DependentUpon>
