@@ -71,6 +71,10 @@ namespace LoginV1
             if (e.KeyChar == 13)
             {
                 btnOk.PerformClick();
+                frmBienvenido bienvenido = new frmBienvenido();
+                bienvenido.ShowDialog();
+                database db = new database();
+
             }
         }
     }
