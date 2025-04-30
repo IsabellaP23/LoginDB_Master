@@ -130,9 +130,37 @@ namespace LoginV1
             {
                 conexion.Open();
 
+                string consulta = "SELECT COUNT(*) FROM tblusuarios WHERE Nombre_Usuario = @usuario AND Contraseña = @contraseña";
 
+                using (var comando = new SQLiteCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@usuario", nombreUsuario);
+                    comando.Parameters.AddWithValue("@contraseña", contraseña);
+
+                    int cantidad = Convert.ToInt32(comando.ExecuteScalar());
+                    return cantidad > 0;
+                }
             }
         }
+
+        public int ObtenerRolID(string nombreUsuario)
+        {
+            using (var conexion = new SQLiteConnection($"Data Source={dbFile};Version=3;"))
+            {
+                conexion.Open();
+
+                string consulta = "SELECT Rol_ID FROM tblusuarios WHERE Nombre_Usuario = @usuario";
+
+                using (var comando = new SQLiteCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@usuario", nombreUsuario);
+
+                    object resultado = comando.ExecuteScalar();
+                    return resultado != null ? Convert.ToInt32(resultado) : -1;
+                }
+            }
+        }
+
 
     }
 }
