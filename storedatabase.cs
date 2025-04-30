@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SQLite;
+using System.IO;
 
 namespace LoginV1
 {
@@ -27,7 +27,7 @@ namespace LoginV1
             }
             else
             {
-                Console.WriteLine("La Base de Datos está activa");
+
             }
         }
 
@@ -85,7 +85,7 @@ namespace LoginV1
                     EmpresaID INTEGER PRIMARY KEY,
                     Nombre_Empresa TEXT NOT NULL,
                     Telefono INTEGER NOT NULL,
-                    Correo TEXT NOT NULL,
+                    Correo TEXT NOT NULL
                 );";
 
                 string insertRoles = @"
@@ -99,7 +99,7 @@ namespace LoginV1
                 string insertUsuario = @"
                 INSERT OR IGNORE INTO tbUsuarios (UsuarioID, Nombre_Usuario, Contraseña, Rol_ID)
                 VALUES
-                    (1524563254, 'JulianG', 12345, 1);";
+                    (1524563254, 'JulianG', '12345', 1);";
 
                 var comandos = new[]
                 {
@@ -121,8 +121,27 @@ namespace LoginV1
                     }
                 }
 
-
             }
         }
+
+        public bool VerificarCredenciales(string nombreUsuario, string contraseña)
+        {
+            using (var conexion = new SQLiteConnection($"Data Source={dbFile};Version=3;"))
+            {
+                conexion.Open();
+
+                string consulta = "SELECT COUNT(*) FROM tbUsuarios WHERE Nombre_Usuario = @usuario AND Contraseña = @contraseña";
+
+                using (var comando = new SQLiteCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@usuario", nombreUsuario);
+                    comando.Parameters.AddWithValue("@contraseña", contraseña);
+
+                    int cantidad = Convert.ToInt32(comando.ExecuteScalar());
+                    return cantidad > 0;
+                }
+            }
+        }
+
     }
 }
