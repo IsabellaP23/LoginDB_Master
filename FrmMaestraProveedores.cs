@@ -97,5 +97,39 @@ namespace LoginV1
                 dtgDatos.Focus();
             }
         }
+
+        private void FrmMaestraProveedores_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregarProovedor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               
+                string nombreEmpresa = txtNombreEmpresa.Text;
+                string telefono = txtTelefono.Text;
+                string correo = txtCorreoEmpresa.Text;
+
+                
+                var datos = new Dictionary<string, object>
+        {
+            { "Nombre_Empresa", nombreEmpresa },
+            { "Telefono", telefono },
+            { "Correo", correo }
+        };
+
+                // Llamar al método genérico
+                Crud.Insertar("Proovedores", datos);
+
+                MessageBox.Show("Proveedor agregado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar: " + ex.Message);
+            }
+
+        }
     }
 }

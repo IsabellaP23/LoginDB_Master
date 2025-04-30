@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbIdmpresa = new System.Windows.Forms.Label();
-            this.txtIdempresa = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblNombreEmpresa = new System.Windows.Forms.Label();
             this.txtNombreEmpresa = new System.Windows.Forms.TextBox();
@@ -41,25 +39,12 @@
             this.btnActulizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dtgDatos = new System.Windows.Forms.DataGridView();
+            this.btnPrimerRegistro = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnUltimoRegistro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbIdmpresa
-            // 
-            this.lbIdmpresa.AutoSize = true;
-            this.lbIdmpresa.Location = new System.Drawing.Point(39, 32);
-            this.lbIdmpresa.Name = "lbIdmpresa";
-            this.lbIdmpresa.Size = new System.Drawing.Size(178, 16);
-            this.lbIdmpresa.TabIndex = 0;
-            this.lbIdmpresa.Text = "Identificacion de la  empresa";
-            // 
-            // txtIdempresa
-            // 
-            this.txtIdempresa.Location = new System.Drawing.Point(42, 63);
-            this.txtIdempresa.Name = "txtIdempresa";
-            this.txtIdempresa.Size = new System.Drawing.Size(156, 22);
-            this.txtIdempresa.TabIndex = 1;
-            this.txtIdempresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdempresa_KeyPress);
             // 
             // txtTelefono
             // 
@@ -120,6 +105,7 @@
             this.btnAgregarProovedor.TabIndex = 8;
             this.btnAgregarProovedor.Text = "Agregar";
             this.btnAgregarProovedor.UseVisualStyleBackColor = true;
+            this.btnAgregarProovedor.Click += new System.EventHandler(this.btnAgregarProovedor_Click);
             this.btnAgregarProovedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnAgregarProovedor_KeyPress);
             // 
             // btnConsultar
@@ -162,11 +148,51 @@
             this.dtgDatos.Size = new System.Drawing.Size(1163, 279);
             this.dtgDatos.TabIndex = 12;
             // 
+            // btnPrimerRegistro
+            // 
+            this.btnPrimerRegistro.Location = new System.Drawing.Point(981, 25);
+            this.btnPrimerRegistro.Name = "btnPrimerRegistro";
+            this.btnPrimerRegistro.Size = new System.Drawing.Size(130, 35);
+            this.btnPrimerRegistro.TabIndex = 13;
+            this.btnPrimerRegistro.Text = "Primer Registro";
+            this.btnPrimerRegistro.UseVisualStyleBackColor = true;
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.Location = new System.Drawing.Point(984, 77);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(127, 35);
+            this.btnSiguiente.TabIndex = 14;
+            this.btnSiguiente.Text = "Siguiente Registro";
+            this.btnSiguiente.UseVisualStyleBackColor = true;
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.Location = new System.Drawing.Point(984, 133);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(127, 35);
+            this.btnAnterior.TabIndex = 15;
+            this.btnAnterior.Text = "Anterior Registro";
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            // 
+            // btnUltimoRegistro
+            // 
+            this.btnUltimoRegistro.Location = new System.Drawing.Point(984, 190);
+            this.btnUltimoRegistro.Name = "btnUltimoRegistro";
+            this.btnUltimoRegistro.Size = new System.Drawing.Size(127, 35);
+            this.btnUltimoRegistro.TabIndex = 16;
+            this.btnUltimoRegistro.Text = "Ultimo Registro";
+            this.btnUltimoRegistro.UseVisualStyleBackColor = true;
+            // 
             // FrmMaestraProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1235, 528);
+            this.Controls.Add(this.btnUltimoRegistro);
+            this.Controls.Add(this.btnAnterior);
+            this.Controls.Add(this.btnSiguiente);
+            this.Controls.Add(this.btnPrimerRegistro);
             this.Controls.Add(this.dtgDatos);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActulizar);
@@ -178,11 +204,10 @@
             this.Controls.Add(this.lblTelefonoEmpresa);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.lblNombreEmpresa);
-            this.Controls.Add(this.txtIdempresa);
-            this.Controls.Add(this.lbIdmpresa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmMaestraProveedores";
             this.Text = "FrmMaestraProveedores";
+            this.Load += new System.EventHandler(this.FrmMaestraProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -190,9 +215,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbIdmpresa;
-        private System.Windows.Forms.TextBox txtIdempresa;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblNombreEmpresa;
         private System.Windows.Forms.TextBox txtNombreEmpresa;
@@ -204,5 +226,9 @@
         private System.Windows.Forms.Button btnActulizar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dtgDatos;
+        private System.Windows.Forms.Button btnPrimerRegistro;
+        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.Button btnUltimoRegistro;
     }
 }

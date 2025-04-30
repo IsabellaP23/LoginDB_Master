@@ -39,13 +39,13 @@ namespace LoginV1
 
                 string crearTipoUsuarios = @"
                 CREATE TABLE IF NOT EXISTS Tipo_Usuarios (
-                    Rol_ID INTEGER PRIMARY KEY,
+                    Rol_ID INTEGER PRIMARY KEY AUTOINCREMENT,
                     NombreRol TEXT NOT NULL
                 );";
 
                 string crearUsuarios = @"
                 CREATE TABLE IF NOT EXISTS tbUsuarios (
-                    UsuarioID INTEGER PRIMARY KEY,
+                    UsuarioID INTEGER PRIMARY KEY AUTOINCREMENT,
                     Nombre_Usuario TEXT NOT NULL,
                     Contraseña TEXT NOT NULL,
                     Rol_ID INTEGER,
@@ -54,7 +54,7 @@ namespace LoginV1
 
                 string crearProductos = @"
                 CREATE TABLE IF NOT EXISTS Productos (
-                    ProductoID INTEGER PRIMARY KEY,
+                    ProductoID INTEGER PRIMARY KEY AUTOINCREMENT,
                     Nombre_Producto TEXT NOT NULL,
                     Stock INTEGER NOT NULL,
                     Precio REAL NOT NULL
@@ -62,7 +62,7 @@ namespace LoginV1
 
                 string crearClientes = @"
                 CREATE TABLE IF NOT EXISTS Clientes (
-                    ClienteID INTEGER PRIMARY KEY,
+                    ClienteID INTEGER PRIMARY KEY AUTOINCREMENT,
                     Nombre TEXT NOT NULL,
                     Correo TEXT NOT NULL,
                     Telefono TEXT NOT NULL
@@ -70,7 +70,7 @@ namespace LoginV1
 
                 string crearVentas = @"
                 CREATE TABLE IF NOT EXISTS Ventas (
-                    VentaID INTEGER PRIMARY KEY,
+                    VentaID INTEGER PRIMARY KEY AUTOINCREMENT,
                     ClienteID INTEGER,
                     ProductoID INTEGER,
                     Fecha_Venta TEXT NOT NULL,
@@ -82,10 +82,10 @@ namespace LoginV1
 
                 string crearProovedores = @"
                 CREATE TABLE IF NOT EXISTS Proovedores (
-                    EmpresaID INTEGER PRIMARY KEY,
+                    EmpresaID INTEGER PRIMARY KEY AUTOINCREMENT,
                     Nombre_Empresa TEXT NOT NULL,
                     Telefono INTEGER NOT NULL,
-                    Correo TEXT NOT NULL,
+                    Correo TEXT NOT NULL
                 );";
 
                 string insertRoles = @"
@@ -122,6 +122,43 @@ namespace LoginV1
                 }
 
 
+            }
+        }
+        public bool VerificarCredenciales(string nombreUsuario, string contraseña)
+        {
+            using (var conexion = new SQLiteConnection($"Data Source={dbFile};Version=3;"))
+            {
+                conexion.Open();
+
+                string consulta = "SELECT COUNT(*) FROM tbUsuarios WHERE Nombre_Usuario = @usuario AND Contraseña = @contraseña";
+
+                using (var comando = new SQLiteCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@usuario", nombreUsuario);
+                    comando.Parameters.AddWithValue("@contraseña", contraseña);
+
+                    int cantidad = Convert.ToInt32(comando.ExecuteScalar());
+                    return cantidad > 0;
+
+                }
+            }
+        }
+
+        public int ObtenerRolID(string nombreUsuario)
+        {
+            using (var conexion = new SQLiteConnection($"Data Source={dbFile};Version=3;"))
+            {
+                conexion.Open();
+
+                string consulta = "SELECT Rol_ID FROM tbUsuarios WHERE Nombre_Usuario = @usuario";
+
+                using (var comando = new SQLiteCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@usuario", nombreUsuario);
+
+                    object resultado = comando.ExecuteScalar();
+                    return resultado != null ? Convert.ToInt32(resultado) : -1;
+                }
             }
         }
     }
