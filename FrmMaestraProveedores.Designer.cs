@@ -38,162 +38,226 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnActulizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.dtgDatos = new System.Windows.Forms.DataGridView();
+            this.dtgProveedor = new System.Windows.Forms.DataGridView();
             this.btnPrimerRegistro = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnUltimoRegistro = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
+            this.lblProveedores = new System.Windows.Forms.Label();
+            this.ClmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClmTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClmCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProveedor)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(540, 63);
+            this.txtTelefono.Location = new System.Drawing.Point(354, 116);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(156, 22);
-            this.txtTelefono.TabIndex = 5;
+            this.txtTelefono.Size = new System.Drawing.Size(175, 22);
+            this.txtTelefono.TabIndex = 1;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // lblNombreEmpresa
             // 
             this.lblNombreEmpresa.AutoSize = true;
-            this.lblNombreEmpresa.Location = new System.Drawing.Point(283, 32);
+            this.lblNombreEmpresa.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreEmpresa.Location = new System.Drawing.Point(80, 86);
             this.lblNombreEmpresa.Name = "lblNombreEmpresa";
-            this.lblNombreEmpresa.Size = new System.Drawing.Size(59, 16);
+            this.lblNombreEmpresa.Size = new System.Drawing.Size(93, 27);
             this.lblNombreEmpresa.TabIndex = 2;
             this.lblNombreEmpresa.Text = "Nombre ";
             // 
             // txtNombreEmpresa
             // 
-            this.txtNombreEmpresa.Location = new System.Drawing.Point(286, 63);
+            this.txtNombreEmpresa.Location = new System.Drawing.Point(85, 116);
             this.txtNombreEmpresa.Name = "txtNombreEmpresa";
-            this.txtNombreEmpresa.Size = new System.Drawing.Size(156, 22);
-            this.txtNombreEmpresa.TabIndex = 3;
+            this.txtNombreEmpresa.Size = new System.Drawing.Size(185, 22);
+            this.txtNombreEmpresa.TabIndex = 0;
             this.txtNombreEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreEmpresa_KeyPress);
             // 
             // lblTelefonoEmpresa
             // 
             this.lblTelefonoEmpresa.AutoSize = true;
-            this.lblTelefonoEmpresa.Location = new System.Drawing.Point(537, 32);
+            this.lblTelefonoEmpresa.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefonoEmpresa.Location = new System.Drawing.Point(349, 86);
             this.lblTelefonoEmpresa.Name = "lblTelefonoEmpresa";
-            this.lblTelefonoEmpresa.Size = new System.Drawing.Size(64, 16);
+            this.lblTelefonoEmpresa.Size = new System.Drawing.Size(95, 27);
             this.lblTelefonoEmpresa.TabIndex = 4;
             this.lblTelefonoEmpresa.Text = "Telefono ";
             // 
             // txtCorreoEmpresa
             // 
-            this.txtCorreoEmpresa.Location = new System.Drawing.Point(769, 63);
+            this.txtCorreoEmpresa.Location = new System.Drawing.Point(602, 116);
             this.txtCorreoEmpresa.Name = "txtCorreoEmpresa";
-            this.txtCorreoEmpresa.Size = new System.Drawing.Size(156, 22);
-            this.txtCorreoEmpresa.TabIndex = 7;
+            this.txtCorreoEmpresa.Size = new System.Drawing.Size(230, 22);
+            this.txtCorreoEmpresa.TabIndex = 2;
             this.txtCorreoEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreoEmpresa_KeyPress);
             // 
             // lblCorreoEmpresa
             // 
             this.lblCorreoEmpresa.AutoSize = true;
-            this.lblCorreoEmpresa.Location = new System.Drawing.Point(766, 32);
+            this.lblCorreoEmpresa.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreoEmpresa.Location = new System.Drawing.Point(597, 86);
             this.lblCorreoEmpresa.Name = "lblCorreoEmpresa";
-            this.lblCorreoEmpresa.Size = new System.Drawing.Size(48, 16);
+            this.lblCorreoEmpresa.Size = new System.Drawing.Size(74, 27);
             this.lblCorreoEmpresa.TabIndex = 6;
             this.lblCorreoEmpresa.Text = "Correo";
             // 
             // btnAgregarProovedor
             // 
-            this.btnAgregarProovedor.Location = new System.Drawing.Point(1117, 25);
+            this.btnAgregarProovedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnAgregarProovedor.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProovedor.Location = new System.Drawing.Point(908, 231);
             this.btnAgregarProovedor.Name = "btnAgregarProovedor";
-            this.btnAgregarProovedor.Size = new System.Drawing.Size(88, 35);
-            this.btnAgregarProovedor.TabIndex = 8;
+            this.btnAgregarProovedor.Size = new System.Drawing.Size(125, 35);
+            this.btnAgregarProovedor.TabIndex = 3;
             this.btnAgregarProovedor.Text = "Agregar";
-            this.btnAgregarProovedor.UseVisualStyleBackColor = true;
+            this.btnAgregarProovedor.UseVisualStyleBackColor = false;
             this.btnAgregarProovedor.Click += new System.EventHandler(this.btnAgregarProovedor_Click);
             this.btnAgregarProovedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnAgregarProovedor_KeyPress);
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(1117, 77);
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnConsultar.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.Location = new System.Drawing.Point(908, 291);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(88, 35);
-            this.btnConsultar.TabIndex = 9;
+            this.btnConsultar.Size = new System.Drawing.Size(125, 35);
+            this.btnConsultar.TabIndex = 4;
             this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnConsultar_KeyPress);
             // 
             // btnActulizar
             // 
-            this.btnActulizar.Location = new System.Drawing.Point(1117, 133);
+            this.btnActulizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnActulizar.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActulizar.Location = new System.Drawing.Point(908, 351);
             this.btnActulizar.Name = "btnActulizar";
-            this.btnActulizar.Size = new System.Drawing.Size(88, 35);
-            this.btnActulizar.TabIndex = 10;
+            this.btnActulizar.Size = new System.Drawing.Size(125, 35);
+            this.btnActulizar.TabIndex = 5;
             this.btnActulizar.Text = "Actulizar";
-            this.btnActulizar.UseVisualStyleBackColor = true;
+            this.btnActulizar.UseVisualStyleBackColor = false;
             this.btnActulizar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnActulizar_KeyPress);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(1117, 190);
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnEliminar.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(908, 411);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(88, 35);
-            this.btnEliminar.TabIndex = 11;
+            this.btnEliminar.Size = new System.Drawing.Size(125, 35);
+            this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnEliminar_KeyPress);
             // 
-            // dtgDatos
+            // dtgProveedor
             // 
-            this.dtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgDatos.Location = new System.Drawing.Point(42, 231);
-            this.dtgDatos.Name = "dtgDatos";
-            this.dtgDatos.RowHeadersWidth = 51;
-            this.dtgDatos.RowTemplate.Height = 24;
-            this.dtgDatos.Size = new System.Drawing.Size(1163, 279);
-            this.dtgDatos.TabIndex = 12;
+            this.dtgProveedor.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.dtgProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClmNombre,
+            this.ClmTelefono,
+            this.ClmCorreo});
+            this.dtgProveedor.Location = new System.Drawing.Point(85, 163);
+            this.dtgProveedor.Name = "dtgProveedor";
+            this.dtgProveedor.RowHeadersWidth = 51;
+            this.dtgProveedor.RowTemplate.Height = 24;
+            this.dtgProveedor.Size = new System.Drawing.Size(773, 377);
+            this.dtgProveedor.TabIndex = 12;
             // 
             // btnPrimerRegistro
             // 
-            this.btnPrimerRegistro.Location = new System.Drawing.Point(981, 25);
+            this.btnPrimerRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnPrimerRegistro.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrimerRegistro.Location = new System.Drawing.Point(1061, 229);
             this.btnPrimerRegistro.Name = "btnPrimerRegistro";
-            this.btnPrimerRegistro.Size = new System.Drawing.Size(130, 35);
-            this.btnPrimerRegistro.TabIndex = 13;
+            this.btnPrimerRegistro.Size = new System.Drawing.Size(157, 39);
+            this.btnPrimerRegistro.TabIndex = 7;
             this.btnPrimerRegistro.Text = "Primer Registro";
-            this.btnPrimerRegistro.UseVisualStyleBackColor = true;
+            this.btnPrimerRegistro.UseVisualStyleBackColor = false;
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(984, 77);
+            this.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnSiguiente.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.Location = new System.Drawing.Point(1061, 289);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(127, 35);
-            this.btnSiguiente.TabIndex = 14;
+            this.btnSiguiente.Size = new System.Drawing.Size(157, 39);
+            this.btnSiguiente.TabIndex = 8;
             this.btnSiguiente.Text = "Siguiente Registro";
-            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.UseVisualStyleBackColor = false;
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(984, 133);
+            this.btnAnterior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnAnterior.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnterior.Location = new System.Drawing.Point(1061, 349);
             this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(127, 35);
-            this.btnAnterior.TabIndex = 15;
+            this.btnAnterior.Size = new System.Drawing.Size(157, 39);
+            this.btnAnterior.TabIndex = 9;
             this.btnAnterior.Text = "Anterior Registro";
-            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.UseVisualStyleBackColor = false;
             // 
             // btnUltimoRegistro
             // 
-            this.btnUltimoRegistro.Location = new System.Drawing.Point(984, 190);
+            this.btnUltimoRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnUltimoRegistro.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUltimoRegistro.Location = new System.Drawing.Point(1061, 409);
             this.btnUltimoRegistro.Name = "btnUltimoRegistro";
-            this.btnUltimoRegistro.Size = new System.Drawing.Size(127, 35);
-            this.btnUltimoRegistro.TabIndex = 16;
+            this.btnUltimoRegistro.Size = new System.Drawing.Size(157, 39);
+            this.btnUltimoRegistro.TabIndex = 10;
             this.btnUltimoRegistro.Text = "Ultimo Registro";
-            this.btnUltimoRegistro.UseVisualStyleBackColor = true;
+            this.btnUltimoRegistro.UseVisualStyleBackColor = false;
+            // 
+            // lblProveedores
+            // 
+            this.lblProveedores.AutoSize = true;
+            this.lblProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(203)))), ((int)(((byte)(208)))));
+            this.lblProveedores.Font = new System.Drawing.Font("Palatino Linotype", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProveedores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
+            this.lblProveedores.Location = new System.Drawing.Point(12, 9);
+            this.lblProveedores.Name = "lblProveedores";
+            this.lblProveedores.Size = new System.Drawing.Size(1234, 50);
+            this.lblProveedores.TabIndex = 17;
+            this.lblProveedores.Text = "                                                           Proveedor             " +
+    "                                            ";
+            // 
+            // ClmNombre
+            // 
+            this.ClmNombre.HeaderText = "Nombre";
+            this.ClmNombre.MinimumWidth = 6;
+            this.ClmNombre.Name = "ClmNombre";
+            this.ClmNombre.Width = 125;
+            // 
+            // ClmTelefono
+            // 
+            this.ClmTelefono.HeaderText = "Telefono";
+            this.ClmTelefono.MinimumWidth = 6;
+            this.ClmTelefono.Name = "ClmTelefono";
+            this.ClmTelefono.Width = 125;
+            // 
+            // ClmCorreo
+            // 
+            this.ClmCorreo.HeaderText = "Correo";
+            this.ClmCorreo.MinimumWidth = 6;
+            this.ClmCorreo.Name = "ClmCorreo";
+            this.ClmCorreo.Width = 125;
             // 
             // FrmMaestraProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1235, 528);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
+            this.ClientSize = new System.Drawing.Size(1261, 560);
+            this.Controls.Add(this.lblProveedores);
             this.Controls.Add(this.btnUltimoRegistro);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnPrimerRegistro);
-            this.Controls.Add(this.dtgDatos);
+            this.Controls.Add(this.dtgProveedor);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActulizar);
             this.Controls.Add(this.btnConsultar);
@@ -206,9 +270,10 @@
             this.Controls.Add(this.lblNombreEmpresa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmMaestraProveedores";
-            this.Text = "FrmMaestraProveedores";
-            this.Load += new System.EventHandler(this.FrmMaestraProveedores_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Maestra Proveedor  ";
+//            this.Load += new System.EventHandler(this.FrmMaestraProveedores_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProveedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,10 +290,14 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnActulizar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.DataGridView dtgDatos;
+        private System.Windows.Forms.DataGridView dtgProveedor;
         private System.Windows.Forms.Button btnPrimerRegistro;
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button btnUltimoRegistro;
+        private System.Windows.Forms.Label lblProveedores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClmNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClmTelefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClmCorreo;
     }
 }
