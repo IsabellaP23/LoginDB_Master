@@ -29,7 +29,8 @@ namespace LoginV1
             {
                 frmBienvenido bienvenido = new frmBienvenido();
                 bienvenido.lblUser.Text = txtUsuario.Text; 
-                bienvenido.ShowDialog();
+                bienvenido.Show();
+                this.Hide();
             }
             else
             {
@@ -76,7 +77,8 @@ namespace LoginV1
                 {
                     frmBienvenido bienvenido = new frmBienvenido();
                     bienvenido.lblUser.Text = txtUsuario.Text;
-                    bienvenido.ShowDialog();
+                    bienvenido.Show();
+                    this.Hide();
                 }
                 else
                 {
