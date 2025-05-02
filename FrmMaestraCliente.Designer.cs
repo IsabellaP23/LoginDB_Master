@@ -34,13 +34,13 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtContaseña = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.dtgClientes = new System.Windows.Forms.DataGridView();
             this.ClmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClmContraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClmTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClmCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.lblContraseña = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.btnUltimoRegistro = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
@@ -60,6 +60,7 @@
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnConsultar
             // 
@@ -71,6 +72,7 @@
             this.btnConsultar.TabIndex = 4;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnActualizar
             // 
@@ -82,6 +84,7 @@
             this.btnActualizar.TabIndex = 5;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 
@@ -93,6 +96,7 @@
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // txtNombre
             // 
@@ -100,6 +104,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(165, 22);
             this.txtNombre.TabIndex = 0;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtCorreo
             // 
@@ -107,13 +112,15 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(213, 22);
             this.txtCorreo.TabIndex = 2;
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
-            // txtContaseña
+            // txtTelefono
             // 
-            this.txtContaseña.Location = new System.Drawing.Point(312, 135);
-            this.txtContaseña.Name = "txtContaseña";
-            this.txtContaseña.Size = new System.Drawing.Size(189, 22);
-            this.txtContaseña.TabIndex = 1;
+            this.txtTelefono.Location = new System.Drawing.Point(312, 135);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(189, 22);
+            this.txtTelefono.TabIndex = 1;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // dtgClientes
             // 
@@ -121,7 +128,7 @@
             this.dtgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ClmNombre,
-            this.ClmContraseña,
+            this.ClmTelefono,
             this.ClmCorreo});
             this.dtgClientes.Location = new System.Drawing.Point(78, 188);
             this.dtgClientes.Name = "dtgClientes";
@@ -130,6 +137,7 @@
             this.dtgClientes.Size = new System.Drawing.Size(649, 365);
             this.dtgClientes.TabIndex = 10;
             this.dtgClientes.TabStop = false;
+            this.dtgClientes.SelectionChanged += new System.EventHandler(this.dtgClientes_SelectionChanged);
             // 
             // ClmNombre
             // 
@@ -138,12 +146,12 @@
             this.ClmNombre.Name = "ClmNombre";
             this.ClmNombre.Width = 125;
             // 
-            // ClmContraseña
+            // ClmTelefono
             // 
-            this.ClmContraseña.HeaderText = "Contraseña";
-            this.ClmContraseña.MinimumWidth = 6;
-            this.ClmContraseña.Name = "ClmContraseña";
-            this.ClmContraseña.Width = 125;
+            this.ClmTelefono.HeaderText = "Telefono";
+            this.ClmTelefono.MinimumWidth = 6;
+            this.ClmTelefono.Name = "ClmTelefono";
+            this.ClmTelefono.Width = 125;
             // 
             // ClmCorreo
             // 
@@ -162,15 +170,15 @@
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre";
             // 
-            // lblContraseña
+            // lblTelefono
             // 
-            this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraseña.Location = new System.Drawing.Point(307, 105);
-            this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(115, 27);
-            this.lblContraseña.TabIndex = 13;
-            this.lblContraseña.Text = "Contraseña";
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefono.Location = new System.Drawing.Point(307, 105);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(90, 27);
+            this.lblTelefono.TabIndex = 13;
+            this.lblTelefono.Text = "Telefono";
             // 
             // lblCliente
             // 
@@ -195,6 +203,7 @@
             this.btnUltimoRegistro.TabIndex = 10;
             this.btnUltimoRegistro.Text = "Ultimo Registro";
             this.btnUltimoRegistro.UseVisualStyleBackColor = false;
+            this.btnUltimoRegistro.Click += new System.EventHandler(this.btnUltimoRegistro_Click);
             // 
             // btnAnterior
             // 
@@ -206,6 +215,7 @@
             this.btnAnterior.TabIndex = 9;
             this.btnAnterior.Text = "Anterior Registro";
             this.btnAnterior.UseVisualStyleBackColor = false;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // btnSiguiente
             // 
@@ -217,6 +227,7 @@
             this.btnSiguiente.TabIndex = 8;
             this.btnSiguiente.Text = "Siguiente Registro";
             this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // btnPrimerRegistro
             // 
@@ -228,6 +239,7 @@
             this.btnPrimerRegistro.TabIndex = 7;
             this.btnPrimerRegistro.Text = "Primer Registro";
             this.btnPrimerRegistro.UseVisualStyleBackColor = false;
+            this.btnPrimerRegistro.Click += new System.EventHandler(this.btnPrimerRegistro_Click);
             // 
             // lblCorreoCliente
             // 
@@ -251,10 +263,10 @@
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnPrimerRegistro);
             this.Controls.Add(this.lblCliente);
-            this.Controls.Add(this.lblContraseña);
+            this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.dtgClientes);
-            this.Controls.Add(this.txtContaseña);
+            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnEliminar);
@@ -278,18 +290,18 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.TextBox txtContaseña;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.DataGridView dtgClientes;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblContraseña;
+        private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Button btnUltimoRegistro;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Button btnPrimerRegistro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClmNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClmContraseña;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClmCorreo;
         private System.Windows.Forms.Label lblCorreoCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClmNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClmTelefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClmCorreo;
     }
 }
