@@ -40,59 +40,58 @@
             // 
             this.btnProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
             this.btnProveedores.FlatAppearance.BorderSize = 0;
-            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedores.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
             this.btnProveedores.Location = new System.Drawing.Point(224, 426);
             this.btnProveedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(189, 50);
-            this.btnProveedores.TabIndex = 8;
+            this.btnProveedores.TabIndex = 2;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = false;
+            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // btnClientes
             // 
             this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
             this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
             this.btnClientes.Location = new System.Drawing.Point(584, 266);
             this.btnClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(192, 50);
-            this.btnClientes.TabIndex = 6;
+            this.btnClientes.TabIndex = 1;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnProducto
             // 
             this.btnProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
             this.btnProducto.FlatAppearance.BorderSize = 0;
-            this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProducto.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
             this.btnProducto.Location = new System.Drawing.Point(224, 266);
             this.btnProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Size = new System.Drawing.Size(189, 50);
-            this.btnProducto.TabIndex = 4;
+            this.btnProducto.TabIndex = 0;
             this.btnProducto.Text = "Productos";
             this.btnProducto.UseVisualStyleBackColor = false;
+            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
             // 
             // btnRol
             // 
             this.btnRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
             this.btnRol.FlatAppearance.BorderSize = 0;
-            this.btnRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRol.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
             this.btnRol.Location = new System.Drawing.Point(584, 426);
             this.btnRol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRol.Name = "btnRol";
             this.btnRol.Size = new System.Drawing.Size(192, 50);
-            this.btnRol.TabIndex = 9;
+            this.btnRol.TabIndex = 3;
             this.btnRol.Text = "Roles";
             this.btnRol.UseVisualStyleBackColor = false;
             // 
@@ -119,7 +118,7 @@
             this.lblBienvenido.TabIndex = 5;
             this.lblBienvenido.Text = "           Bienvenido :)          ";
             // 
-            // FrmBienvenido
+            // frmBienvenido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -131,7 +130,8 @@
             this.Controls.Add(this.btnRol);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.lblBienvenido);
-            this.Name = "FrmBienvenido";
+            this.Name = "frmBienvenido";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmBienvenido";
             this.ResumeLayout(false);
             this.PerformLayout();

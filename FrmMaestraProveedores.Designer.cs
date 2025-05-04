@@ -39,14 +39,14 @@
             this.btnActulizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dtgProveedor = new System.Windows.Forms.DataGridView();
+            this.ClmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClmTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClmCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPrimerRegistro = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnUltimoRegistro = new System.Windows.Forms.Button();
             this.lblProveedores = new System.Windows.Forms.Label();
-            this.ClmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClmTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClmCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProveedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,6 +168,27 @@
             this.dtgProveedor.Size = new System.Drawing.Size(773, 377);
             this.dtgProveedor.TabIndex = 12;
             // 
+            // ClmNombre
+            // 
+            this.ClmNombre.HeaderText = "Nombre";
+            this.ClmNombre.MinimumWidth = 6;
+            this.ClmNombre.Name = "ClmNombre";
+            this.ClmNombre.Width = 125;
+            // 
+            // ClmTelefono
+            // 
+            this.ClmTelefono.HeaderText = "Telefono";
+            this.ClmTelefono.MinimumWidth = 6;
+            this.ClmTelefono.Name = "ClmTelefono";
+            this.ClmTelefono.Width = 125;
+            // 
+            // ClmCorreo
+            // 
+            this.ClmCorreo.HeaderText = "Correo";
+            this.ClmCorreo.MinimumWidth = 6;
+            this.ClmCorreo.Name = "ClmCorreo";
+            this.ClmCorreo.Width = 125;
+            // 
             // btnPrimerRegistro
             // 
             this.btnPrimerRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
@@ -220,31 +241,10 @@
             this.lblProveedores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
             this.lblProveedores.Location = new System.Drawing.Point(12, 9);
             this.lblProveedores.Name = "lblProveedores";
-            this.lblProveedores.Size = new System.Drawing.Size(1234, 50);
+            this.lblProveedores.Size = new System.Drawing.Size(1162, 50);
             this.lblProveedores.TabIndex = 17;
-            this.lblProveedores.Text = "                                                           Proveedor             " +
-    "                                            ";
-            // 
-            // ClmNombre
-            // 
-            this.ClmNombre.HeaderText = "Nombre";
-            this.ClmNombre.MinimumWidth = 6;
-            this.ClmNombre.Name = "ClmNombre";
-            this.ClmNombre.Width = 125;
-            // 
-            // ClmTelefono
-            // 
-            this.ClmTelefono.HeaderText = "Telefono";
-            this.ClmTelefono.MinimumWidth = 6;
-            this.ClmTelefono.Name = "ClmTelefono";
-            this.ClmTelefono.Width = 125;
-            // 
-            // ClmCorreo
-            // 
-            this.ClmCorreo.HeaderText = "Correo";
-            this.ClmCorreo.MinimumWidth = 6;
-            this.ClmCorreo.Name = "ClmCorreo";
-            this.ClmCorreo.Width = 125;
+            this.lblProveedores.Text = "                                                   Proveedor                     " +
+    "                                    ";
             // 
             // FrmMaestraProveedores
             // 
@@ -272,7 +272,6 @@
             this.Name = "FrmMaestraProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maestra Proveedor  ";
-//            this.Load += new System.EventHandler(this.FrmMaestraProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgProveedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
