@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
@@ -72,7 +73,24 @@ namespace LoginV1
             }
         }
 
+        public static DataTable Consultar(string tabla)
+        {
+            using (SQLiteConnection conexion = new SQLiteConnection(cadena))
+            {
+                conexion.Open();
+                string query = $"SELECT * FROM {tabla}";
 
+                using (SQLiteCommand comando = new SQLiteCommand(query, conexion))
+                {
+                    using (SQLiteDataAdapter adaptador = new SQLiteDataAdapter(comando))
+                    {
+                        DataTable tablaDatos = new DataTable();
+                        adaptador.Fill(tablaDatos);
+                        return tablaDatos;
+                    }
+                }
+            }
+        }
 
     }
 }

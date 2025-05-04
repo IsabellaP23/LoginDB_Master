@@ -107,12 +107,10 @@ namespace LoginV1
         {
             try
             {
-               
                 string nombreEmpresa = txtNombreEmpresa.Text;
                 string telefono = txtTelefono.Text;
                 string correo = txtCorreoEmpresa.Text;
 
-                
                 var datos = new Dictionary<string, object>
         {
             { "Nombre_Empresa", nombreEmpresa },
@@ -120,8 +118,10 @@ namespace LoginV1
             { "Correo", correo }
         };
 
-                // Llamar al método genérico
                 Crud.Insertar("Proovedores", datos);
+
+                // Refrescar el DataGridView
+                dtgDatos.DataSource = Crud.Consultar("Proovedores");
 
                 MessageBox.Show("Proveedor agregado correctamente.");
             }
