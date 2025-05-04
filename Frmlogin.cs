@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using Finisar.SQLite;
+using System.Data.SQLite;
 
 namespace LoginV1
 {
     public partial class FrmLogin : Form
     {
         int cont = 0;
-
+        database db = new database();
         public FrmLogin()
         {
             InitializeComponent();
@@ -22,35 +22,29 @@ namespace LoginV1
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            /*bool isAuthenticated = //Autenticacion();
+            string usuario = txtUsuario.Text;
+            string contraseña = txtContraseña.Text;
 
-            if (isAuthenticated)
+            if (db.VerificarCredenciales(usuario, contraseña))
             {
-                frmBienvenido frmbienvenido = new frmBienvenido();
-                frmbienvenido.lblUser.Text = txtUsuario.Text;
-                frmbienvenido.Show();
+                frmBienvenido bienvenido = new frmBienvenido();
+                bienvenido.lblUser.Text = txtUsuario.Text; 
+                bienvenido.Show();
                 this.Hide();
             }
             else
             {
-                cont++;
-                MessageBox.Show("Usuario o contraseña incorrectos");
 
-                // Si hay demasiados intentos fallidos, cierra el formulario
+                MessageBox.Show("Usuario o contraseña incorrectos");
+                cont++;
                 if (cont == 3)
                 {
                     MessageBox.Show("Demasiados intentos incorrectos, inténtelo más tarde :)");
                     this.Close();
                 }
-            }*/
+            }
         }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtUsuario_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
@@ -58,7 +52,12 @@ namespace LoginV1
             }
         }
 
-        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtContraseña_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
@@ -66,17 +65,35 @@ namespace LoginV1
             }
         }
 
-        private void btnOk_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnOk_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
                 btnOk.PerformClick();
-                frmBienvenido bienvenido = new frmBienvenido();
-                bienvenido.ShowDialog();
-                database db = new database();
+                string usuario = txtUsuario.Text;
+                string contraseña = txtContraseña.Text;
 
+                if (db.VerificarCredenciales(usuario, contraseña))
+                {
+                    frmBienvenido bienvenido = new frmBienvenido();
+                    bienvenido.lblUser.Text = txtUsuario.Text;
+                    bienvenido.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    cont++;
+                    MessageBox.Show("Usuario o contraseña incorrectos");
+
+                    // Si hay demasiados intentos fallidos, cierra el formulario
+                    if (cont == 3)
+                    {
+                        MessageBox.Show("Demasiados intentos incorrectos, inténtelo más tarde :)");
+                        this.Close();
+                    }
+                }
             }
         }
-    }
 
+    }
 }

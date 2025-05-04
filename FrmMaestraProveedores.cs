@@ -19,23 +19,14 @@ namespace LoginV1
 
         private void txtIdempresa_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar>=48 && e.KeyChar<=57 || e.KeyChar==8 || e.KeyChar==13)
+            if (e.KeyChar==13)
             {
-                if (e.KeyChar==13)
-                {
-                    txtNombreEmpresa.Focus();
-                }
-            }
-            else
-            {
-                e.KeyChar = '\0';
-                MessageBox.Show("¡No ingresaste un caracter permitido!");
+                txtNombreEmpresa.Focus();
             }
         }
 
         private void txtNombreEmpresa_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
              if (e.KeyChar == 13)
              {
                     txtTelefono.Focus();
@@ -94,13 +85,8 @@ namespace LoginV1
         {
             if (e.KeyChar==13)
             {
-                dtgDatos.Focus();
+                dtgProveedor.Focus();
             }
-        }
-
-        private void FrmMaestraProveedores_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnAgregarProovedor_Click(object sender, EventArgs e)
@@ -121,7 +107,7 @@ namespace LoginV1
                 Crud.Insertar("Proovedores", datos);
 
                 // Refrescar el DataGridView
-                dtgDatos.DataSource = Crud.Consultar("Proovedores");
+                dtgProveedor.DataSource = Crud.Consultar("Proovedores");
 
                 MessageBox.Show("Proveedor agregado correctamente.");
             }

@@ -28,19 +28,268 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtContaseña = new System.Windows.Forms.TextBox();
+            this.dtgClientes = new System.Windows.Forms.DataGridView();
+            this.ClmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClmContraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClmCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblContraseña = new System.Windows.Forms.Label();
+            this.lblCliente = new System.Windows.Forms.Label();
+            this.btnUltimoRegistro = new System.Windows.Forms.Button();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnPrimerRegistro = new System.Windows.Forms.Button();
+            this.lblCorreoCliente = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgClientes)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnAgregar.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(838, 241);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(156, 38);
+            this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnConsultar.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.Location = new System.Drawing.Point(838, 297);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(156, 38);
+            this.btnConsultar.TabIndex = 4;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnActualizar.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.Location = new System.Drawing.Point(838, 355);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(156, 38);
+            this.btnActualizar.TabIndex = 5;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnEliminar.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(838, 411);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(156, 38);
+            this.btnEliminar.TabIndex = 6;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(78, 135);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(165, 22);
+            this.txtNombre.TabIndex = 0;
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(546, 135);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(213, 22);
+            this.txtCorreo.TabIndex = 2;
+            // 
+            // txtContaseña
+            // 
+            this.txtContaseña.Location = new System.Drawing.Point(312, 135);
+            this.txtContaseña.Name = "txtContaseña";
+            this.txtContaseña.Size = new System.Drawing.Size(189, 22);
+            this.txtContaseña.TabIndex = 1;
+            // 
+            // dtgClientes
+            // 
+            this.dtgClientes.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.dtgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClmNombre,
+            this.ClmContraseña,
+            this.ClmCorreo});
+            this.dtgClientes.Location = new System.Drawing.Point(78, 188);
+            this.dtgClientes.Name = "dtgClientes";
+            this.dtgClientes.RowHeadersWidth = 51;
+            this.dtgClientes.RowTemplate.Height = 24;
+            this.dtgClientes.Size = new System.Drawing.Size(649, 365);
+            this.dtgClientes.TabIndex = 10;
+            this.dtgClientes.TabStop = false;
+            // 
+            // ClmNombre
+            // 
+            this.ClmNombre.HeaderText = "Nombre";
+            this.ClmNombre.MinimumWidth = 6;
+            this.ClmNombre.Name = "ClmNombre";
+            this.ClmNombre.Width = 125;
+            // 
+            // ClmContraseña
+            // 
+            this.ClmContraseña.HeaderText = "Contraseña";
+            this.ClmContraseña.MinimumWidth = 6;
+            this.ClmContraseña.Name = "ClmContraseña";
+            this.ClmContraseña.Width = 125;
+            // 
+            // ClmCorreo
+            // 
+            this.ClmCorreo.HeaderText = "Correo";
+            this.ClmCorreo.MinimumWidth = 6;
+            this.ClmCorreo.Name = "ClmCorreo";
+            this.ClmCorreo.Width = 125;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(73, 105);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(88, 27);
+            this.lblNombre.TabIndex = 1;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // lblContraseña
+            // 
+            this.lblContraseña.AutoSize = true;
+            this.lblContraseña.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContraseña.Location = new System.Drawing.Point(307, 105);
+            this.lblContraseña.Name = "lblContraseña";
+            this.lblContraseña.Size = new System.Drawing.Size(115, 27);
+            this.lblContraseña.TabIndex = 13;
+            this.lblContraseña.Text = "Contraseña";
+            // 
+            // lblCliente
+            // 
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(203)))), ((int)(((byte)(208)))));
+            this.lblCliente.Font = new System.Drawing.Font("Palatino Linotype", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
+            this.lblCliente.Location = new System.Drawing.Point(13, 9);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(1100, 50);
+            this.lblCliente.TabIndex = 14;
+            this.lblCliente.Text = "                                                        Cliente                  " +
+    "                                 ";
+            // 
+            // btnUltimoRegistro
+            // 
+            this.btnUltimoRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnUltimoRegistro.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUltimoRegistro.Location = new System.Drawing.Point(1020, 411);
+            this.btnUltimoRegistro.Name = "btnUltimoRegistro";
+            this.btnUltimoRegistro.Size = new System.Drawing.Size(157, 39);
+            this.btnUltimoRegistro.TabIndex = 10;
+            this.btnUltimoRegistro.Text = "Ultimo Registro";
+            this.btnUltimoRegistro.UseVisualStyleBackColor = false;
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnAnterior.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnterior.Location = new System.Drawing.Point(1020, 355);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(157, 39);
+            this.btnAnterior.TabIndex = 9;
+            this.btnAnterior.Text = "Anterior Registro";
+            this.btnAnterior.UseVisualStyleBackColor = false;
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnSiguiente.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.Location = new System.Drawing.Point(1020, 297);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(157, 39);
+            this.btnSiguiente.TabIndex = 8;
+            this.btnSiguiente.Text = "Siguiente Registro";
+            this.btnSiguiente.UseVisualStyleBackColor = false;
+            // 
+            // btnPrimerRegistro
+            // 
+            this.btnPrimerRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnPrimerRegistro.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrimerRegistro.Location = new System.Drawing.Point(1020, 240);
+            this.btnPrimerRegistro.Name = "btnPrimerRegistro";
+            this.btnPrimerRegistro.Size = new System.Drawing.Size(157, 39);
+            this.btnPrimerRegistro.TabIndex = 7;
+            this.btnPrimerRegistro.Text = "Primer Registro";
+            this.btnPrimerRegistro.UseVisualStyleBackColor = false;
+            // 
+            // lblCorreoCliente
+            // 
+            this.lblCorreoCliente.AutoSize = true;
+            this.lblCorreoCliente.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreoCliente.Location = new System.Drawing.Point(541, 105);
+            this.lblCorreoCliente.Name = "lblCorreoCliente";
+            this.lblCorreoCliente.Size = new System.Drawing.Size(74, 27);
+            this.lblCorreoCliente.TabIndex = 15;
+            this.lblCorreoCliente.Text = "Correo";
             // 
             // FrmMaestraCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
+            this.ClientSize = new System.Drawing.Size(1278, 597);
+            this.Controls.Add(this.lblCorreoCliente);
+            this.Controls.Add(this.btnUltimoRegistro);
+            this.Controls.Add(this.btnAnterior);
+            this.Controls.Add(this.btnSiguiente);
+            this.Controls.Add(this.btnPrimerRegistro);
+            this.Controls.Add(this.lblCliente);
+            this.Controls.Add(this.lblContraseña);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.dtgClientes);
+            this.Controls.Add(this.txtContaseña);
+            this.Controls.Add(this.txtCorreo);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.btnConsultar);
+            this.Controls.Add(this.btnAgregar);
             this.Name = "FrmMaestraCliente";
-            this.Text = "Cliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Maestra Cliente";
+            ((System.ComponentModel.ISupportInitialize)(this.dtgClientes)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.TextBox txtContaseña;
+        private System.Windows.Forms.DataGridView dtgClientes;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblContraseña;
+        private System.Windows.Forms.Label lblCliente;
+        private System.Windows.Forms.Button btnUltimoRegistro;
+        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Button btnPrimerRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClmNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClmContraseña;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClmCorreo;
+        private System.Windows.Forms.Label lblCorreoCliente;
     }
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SQLite;
+using System.IO;
 
 namespace LoginV1
 {
@@ -27,7 +27,7 @@ namespace LoginV1
             }
             else
             {
-                Console.WriteLine("La Base de Datos está activa");
+
             }
         }
 
@@ -99,7 +99,7 @@ namespace LoginV1
                 string insertUsuario = @"
                 INSERT OR IGNORE INTO tbUsuarios (UsuarioID, Nombre_Usuario, Contraseña, Rol_ID)
                 VALUES
-                    (1524563254, 'JulianG', 12345, 1);";
+                    (1524563254, 'JulianG', '12345', 1);";
 
                 var comandos = new[]
                 {
@@ -139,7 +139,6 @@ namespace LoginV1
 
                     int cantidad = Convert.ToInt32(comando.ExecuteScalar());
                     return cantidad > 0;
-
                 }
             }
         }
@@ -161,5 +160,7 @@ namespace LoginV1
                 }
             }
         }
+
+
     }
 }
