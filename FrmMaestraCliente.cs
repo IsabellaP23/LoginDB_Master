@@ -22,12 +22,27 @@ namespace LoginV1
             InitializeComponent();
         }
 
+        private bool ValidarCampos()
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtTelefono.Text) ||
+                string.IsNullOrWhiteSpace(txtCorreo.Text))
+            {
+                MessageBox.Show("Por favor, completa todos los campos antes de continuar.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
                 txtTelefono.Focus();
             }
+
         }
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
@@ -59,7 +74,7 @@ namespace LoginV1
             using (SQLiteConnection conexion = new SQLiteConnection(cadena))
             {
                 conexion.Open();
-                string query = "SELECT IdCliente, Nombre, Telefono, Correo FROM Cliente";
+                string query = "SELECT ClienteID, Nombre, Telefono, Correo FROM Clientes";
 
                 using (SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, conexion))
                 {
@@ -68,7 +83,7 @@ namespace LoginV1
                     dtgClientes.DataSource = tabla;
 
                     // Ocultar la columna del ID
-                    dtgClientes.Columns["IdCliente"].Visible = false;
+                    dtgClientes.Columns["ClienteID"].Visible = false;
                 }
             }
         }
@@ -85,6 +100,8 @@ namespace LoginV1
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (!ValidarCampos()) return;
+
             try
             {
 
@@ -101,7 +118,7 @@ namespace LoginV1
         };
 
                 // Llamar al método genérico
-                Crud.Insertar("Cliente", datos);
+                Crud.Insertar("Clientes", datos);
 
                 MessageBox.Show("Cliente agregado correctamente.");
 
@@ -120,6 +137,8 @@ namespace LoginV1
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            if (!ValidarCampos()) return;
+
             if (dtgClientes.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Selecciona un Cliente para actualizar.");
@@ -128,7 +147,7 @@ namespace LoginV1
 
             try
             {
-                int idCliente = Convert.ToInt32(dtgClientes.SelectedRows[0].Cells["IdCliente"].Value);
+                int idCliente = Convert.ToInt32(dtgClientes.SelectedRows[0].Cells["ClienteID"].Value);
                 string nombre = txtNombre.Text;
                 string telefono = txtTelefono.Text;
                 string correo = txtCorreo.Text;
@@ -140,7 +159,7 @@ namespace LoginV1
             { "Correo", correo }
         };
                 // Método del crud
-                Crud.Actualizar("Cliente", datos, "IdCliente", idCliente);
+                Crud.Actualizar("Clientes", datos, "ClienteID", idCliente);
 
                 MessageBox.Show("Cliente actualizado correctamente.");
                 CargarClientes();
@@ -161,14 +180,14 @@ namespace LoginV1
 
             try
             {
-                int idCliente = Convert.ToInt32(dtgClientes.SelectedRows[0].Cells["IdCliente"].Value);
+                int idCliente = Convert.ToInt32(dtgClientes.SelectedRows[0].Cells["ClienteID"].Value);
 
                 var confirmar = MessageBox.Show("¿Estás seguro de eliminar este cliente?", "Confirmar eliminación", MessageBoxButtons.YesNo);
                 if (confirmar != DialogResult.Yes)
                     return;
 
                 // Llamar al método del Crud
-                Crud.Eliminar("Cliente", "IdCliente", idCliente);
+                Crud.Eliminar("Clientes", "ClienteID", idCliente);
 
                 MessageBox.Show("Cliente eliminado correctamente.");
 
@@ -221,8 +240,16 @@ namespace LoginV1
         {
             if (dtgClientes.Rows.Count > 0)
             {
-                posicionActual = dtgClientes.Rows.Count - 1;
-                MostrarRegistro(posicionActual);
+                // Buscar la última fila que no sea la fila nueva
+                for (int i = dtgClientes.Rows.Count - 1; i >= 0; i--)
+                {
+                    if (!dtgClientes.Rows[i].IsNewRow)
+                    {
+                        posicionActual = i;
+                        MostrarRegistro(posicionActual);
+                        break;
+                    }
+                }
             }
         }
     }
