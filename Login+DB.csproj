@@ -95,10 +95,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FrmRegistro.cs" />
-    <Compile Include="FrmRegistro.Designer.cs">
-      <DependentUpon>FrmRegistro.cs</DependentUpon>
-    </Compile>
     <Compile Include="storedatabase.cs" />
     <EmbeddedResource Include="FrmBienvenido.resx">
       <DependentUpon>FrmBienvenido.cs</DependentUpon>
@@ -127,9 +123,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmRegistro.resx">
-      <DependentUpon>FrmRegistro.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
