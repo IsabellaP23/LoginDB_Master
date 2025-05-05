@@ -39,9 +39,6 @@
             this.btnActulizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dtgProveedor = new System.Windows.Forms.DataGridView();
-            this.ClmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClmTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClmCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPrimerRegistro = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
@@ -157,37 +154,13 @@
             // 
             this.dtgProveedor.BackgroundColor = System.Drawing.Color.DarkGray;
             this.dtgProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ClmNombre,
-            this.ClmTelefono,
-            this.ClmCorreo});
             this.dtgProveedor.Location = new System.Drawing.Point(85, 163);
             this.dtgProveedor.Name = "dtgProveedor";
             this.dtgProveedor.RowHeadersWidth = 51;
             this.dtgProveedor.RowTemplate.Height = 24;
             this.dtgProveedor.Size = new System.Drawing.Size(773, 377);
             this.dtgProveedor.TabIndex = 12;
-            // 
-            // ClmNombre
-            // 
-            this.ClmNombre.HeaderText = "Nombre";
-            this.ClmNombre.MinimumWidth = 6;
-            this.ClmNombre.Name = "ClmNombre";
-            this.ClmNombre.Width = 125;
-            // 
-            // ClmTelefono
-            // 
-            this.ClmTelefono.HeaderText = "Telefono";
-            this.ClmTelefono.MinimumWidth = 6;
-            this.ClmTelefono.Name = "ClmTelefono";
-            this.ClmTelefono.Width = 125;
-            // 
-            // ClmCorreo
-            // 
-            this.ClmCorreo.HeaderText = "Correo";
-            this.ClmCorreo.MinimumWidth = 6;
-            this.ClmCorreo.Name = "ClmCorreo";
-            this.ClmCorreo.Width = 125;
+            this.dtgProveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProveedor_CellContentClick);
             // 
             // btnPrimerRegistro
             // 
@@ -295,8 +268,5 @@
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button btnUltimoRegistro;
         private System.Windows.Forms.Label lblProveedores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClmNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClmTelefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClmCorreo;
     }
 }

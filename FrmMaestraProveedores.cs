@@ -117,5 +117,10 @@ namespace LoginV1
             }
 
         }
+
+        private void dtgProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
