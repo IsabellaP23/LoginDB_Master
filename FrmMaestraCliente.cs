@@ -22,6 +22,11 @@ namespace LoginV1
             InitializeComponent();
         }
 
+        private bool EsCorreoValido(string correo)
+        {
+            return System.Text.RegularExpressions.Regex.IsMatch(correo, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+        }
+
         private bool ValidarCampos()
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
@@ -29,6 +34,12 @@ namespace LoginV1
                 string.IsNullOrWhiteSpace(txtCorreo.Text))
             {
                 MessageBox.Show("Por favor, completa todos los campos antes de continuar.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!EsCorreoValido(txtCorreo.Text))
+            {
+                MessageBox.Show("El correo ingresado no tiene un formato válido.", "Correo inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
