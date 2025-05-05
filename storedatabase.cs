@@ -130,7 +130,7 @@ namespace LoginV1
             {
                 conexion.Open();
 
-                string consulta = "SELECT COUNT(*) FROM tbU suarios WHERE Nombre_Usuario = @usuario AND Contraseña = @contraseña";
+                string consulta = "SELECT COUNT(*) FROM tbUsuarios WHERE Nombre_Usuario = @usuario AND Contraseña = @contraseña";
 
                 using (var comando = new SQLiteCommand(consulta, conexion))
                 {
@@ -149,7 +149,7 @@ namespace LoginV1
             {
                 conexion.Open();
 
-                string consulta = "SELECT Rol_ID FROM tblusuarios WHERE Nombre_Usuario = @usuario";
+                string consulta = "SELECT Rol_ID FROM tbUsuarios WHERE Nombre_Usuario = @usuario";
 
                 using (var comando = new SQLiteCommand(consulta, conexion))
                 {
