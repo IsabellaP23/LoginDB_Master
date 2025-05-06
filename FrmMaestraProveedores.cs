@@ -16,7 +16,7 @@ namespace LoginV1
         {
             InitializeComponent();
         }
-
+        private int idSeleccionado = -1;
         private void txtIdempresa_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar==13)
@@ -118,11 +118,6 @@ namespace LoginV1
 
         }
 
-        private void dtgProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             dtgProveedor.DataSource = Crud.Consultar("Proovedores");
@@ -130,30 +125,54 @@ namespace LoginV1
 
         private void btnActulizar_Click(object sender, EventArgs e)
         {
+            if (idSeleccionado == -1)
+            {
+                MessageBox.Show("Por favor selecciona un proveedor en la tabla.");
+                return;
+            }
+
             try
             {
-                int idEmpresa = int.Parse(txtIdempresa.Text);
-                string nombreEmpresa = txtNombreEmpresa.Text;
-                string telefono = txtTelefono.Text;
-                string correo = txtCorreoEmpresa.Text;
-
                 var datos = new Dictionary<string, object>
         {
-            { "Nombre_Empresa", nombreEmpresa },
-            { "Telefono", telefono },
-            { "Correo", correo }
+            { "Nombre_Empresa", txtNombreEmpresa.Text },
+            { "Telefono", txtTelefono.Text },
+            { "Correo", txtCorreoEmpresa.Text }
         };
 
-                Crud.Actualizar("Proovedores", datos, "Id_Empresa", idEmpresa);
+                Crud.Actualizar("Proovedores", datos, "Id_Empresa", idSeleccionado);
 
                 dtgProveedor.DataSource = Crud.Consultar("Proovedores");
+                dtgProveedor.Columns["Id_Empresa"].Visible = false;
 
                 MessageBox.Show("Proveedor actualizado correctamente.");
+                idSeleccionado = -1; // Reseteamos
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al actualizar: " + ex.Message);
             }
+        }
+
+        private void dtgProveedor_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = dtgProveedor.Rows[e.RowIndex];
+
+                // Guarda el ID en una variable privada (sin mostrarlo)
+                idSeleccionado = Convert.ToInt32(fila.Cells["Id_Empresa"].Value);
+
+                // Cargar el resto de los datos en los TextBox visibles
+                txtNombreEmpresa.Text = fila.Cells["Nombre_Empresa"].Value.ToString();
+                txtTelefono.Text = fila.Cells["Telefono"].Value.ToString();
+                txtCorreoEmpresa.Text = fila.Cells["Correo"].Value.ToString();
+            }
+        }
+
+        private void FrmMaestraProveedores_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

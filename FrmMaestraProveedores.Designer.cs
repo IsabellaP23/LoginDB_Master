@@ -162,7 +162,7 @@
             this.dtgProveedor.RowTemplate.Height = 24;
             this.dtgProveedor.Size = new System.Drawing.Size(773, 377);
             this.dtgProveedor.TabIndex = 12;
-            this.dtgProveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProveedor_CellContentClick);
+            this.dtgProveedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProveedor_CellClick_1);
             // 
             // btnPrimerRegistro
             // 
@@ -247,6 +247,7 @@
             this.Name = "FrmMaestraProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maestra Proveedor  ";
+            this.Load += new System.EventHandler(this.FrmMaestraProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgProveedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
