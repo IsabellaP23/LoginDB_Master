@@ -122,5 +122,38 @@ namespace LoginV1
         {
 
         }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            dtgProveedor.DataSource = Crud.Consultar("Proovedores");
+        }
+
+        private void btnActulizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idEmpresa = int.Parse(txtIdempresa.Text);
+                string nombreEmpresa = txtNombreEmpresa.Text;
+                string telefono = txtTelefono.Text;
+                string correo = txtCorreoEmpresa.Text;
+
+                var datos = new Dictionary<string, object>
+        {
+            { "Nombre_Empresa", nombreEmpresa },
+            { "Telefono", telefono },
+            { "Correo", correo }
+        };
+
+                Crud.Actualizar("Proovedores", datos, "Id_Empresa", idEmpresa);
+
+                dtgProveedor.DataSource = Crud.Consultar("Proovedores");
+
+                MessageBox.Show("Proveedor actualizado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar: " + ex.Message);
+            }
+        }
     }
 }

@@ -124,6 +124,7 @@
             this.btnConsultar.TabIndex = 4;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             this.btnConsultar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnConsultar_KeyPress);
             // 
             // btnActulizar
@@ -136,6 +137,7 @@
             this.btnActulizar.TabIndex = 5;
             this.btnActulizar.Text = "Actulizar";
             this.btnActulizar.UseVisualStyleBackColor = false;
+            this.btnActulizar.Click += new System.EventHandler(this.btnActulizar_Click);
             this.btnActulizar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnActulizar_KeyPress);
             // 
             // btnEliminar
