@@ -34,6 +34,7 @@
             this.btnRol = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblBienvenido = new System.Windows.Forms.Label();
+            this.btnCompras = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnProveedores
@@ -42,11 +43,11 @@
             this.btnProveedores.FlatAppearance.BorderSize = 0;
             this.btnProveedores.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
-            this.btnProveedores.Location = new System.Drawing.Point(224, 426);
+            this.btnProveedores.Location = new System.Drawing.Point(202, 426);
             this.btnProveedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(189, 50);
-            this.btnProveedores.TabIndex = 2;
+            this.btnProveedores.TabIndex = 3;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = false;
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
@@ -72,7 +73,7 @@
             this.btnProducto.FlatAppearance.BorderSize = 0;
             this.btnProducto.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
-            this.btnProducto.Location = new System.Drawing.Point(224, 266);
+            this.btnProducto.Location = new System.Drawing.Point(202, 266);
             this.btnProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Size = new System.Drawing.Size(189, 50);
@@ -91,7 +92,7 @@
             this.btnRol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRol.Name = "btnRol";
             this.btnRol.Size = new System.Drawing.Size(192, 50);
-            this.btnRol.TabIndex = 3;
+            this.btnRol.TabIndex = 4;
             this.btnRol.Text = "Roles";
             this.btnRol.UseVisualStyleBackColor = false;
             // 
@@ -118,12 +119,28 @@
             this.lblBienvenido.TabIndex = 5;
             this.lblBienvenido.Text = "           Bienvenido :)          ";
             // 
+            // btnCompras
+            // 
+            this.btnCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnCompras.FlatAppearance.BorderSize = 0;
+            this.btnCompras.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
+            this.btnCompras.Location = new System.Drawing.Point(395, 348);
+            this.btnCompras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCompras.Name = "btnCompras";
+            this.btnCompras.Size = new System.Drawing.Size(189, 50);
+            this.btnCompras.TabIndex = 2;
+            this.btnCompras.Text = "Compras";
+            this.btnCompras.UseVisualStyleBackColor = false;
+            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
+            // 
             // frmBienvenido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(967, 518);
+            this.Controls.Add(this.btnCompras);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnProducto);
@@ -146,5 +163,6 @@
         private System.Windows.Forms.Button btnRol;
         public System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Label lblBienvenido;
+        private System.Windows.Forms.Button btnCompras;
     }
 }

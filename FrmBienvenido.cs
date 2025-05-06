@@ -44,5 +44,12 @@ namespace LoginV1
             proveedores.Show();
             this.Close();
         }
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+            FrmDetalleVentas frmDetalleVentas = new FrmDetalleVentas();
+            frmDetalleVentas.Show();
+            this.Close();
+        }
     }
 }

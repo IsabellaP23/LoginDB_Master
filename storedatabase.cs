@@ -68,7 +68,7 @@ namespace LoginV1
                     Telefono TEXT NOT NULL
                 );";
 
-                string crearVentas = @"
+                /*string crearVentas = @"
                 CREATE TABLE IF NOT EXISTS Ventas (
                     VentaID INTEGER PRIMARY KEY AUTOINCREMENT,
                     ClienteID INTEGER,
@@ -78,7 +78,7 @@ namespace LoginV1
                     Precio_Total REAL NOT NULL,
                     FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID),
                     FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID)
-                );";
+                );";*/
 
                 string crearProovedores = @"
                 CREATE TABLE IF NOT EXISTS Proovedores (
@@ -101,14 +101,49 @@ namespace LoginV1
                 VALUES
                     (1524563254, 'JulianG', '12345', 1);";
 
+                string crearCompras = @"
+                CREATE TABLE IF NOT EXISTS Compra (
+                    IdCompra INTEGER PRIMARY KEY AUTOINCREMENT,
+                    IdCliente INTEGER NOT NULL,
+                    IdVendedor INTEGER NOT NULL,
+                    Fecha TEXT NOT NULL,
+                    Total REAL NOT NULL,
+                    TipoPago TEXT NOT NULL,
+                    FOREIGN KEY (IdCliente) REFERENCES Clientes(ClienteID),
+                    FOREIGN KEY (IdVendedor) REFERENCES tbUsuarios(UsuarioID)
+                );";
+
+                string crearDetalleCompra = @"
+                CREATE TABLE IF NOT EXISTS DetalleCompra (
+                    IdDetalle INTEGER PRIMARY KEY AUTOINCREMENT,
+                    IdCompra INTEGER NOT NULL,
+                    IdProducto INTEGER NOT NULL,
+                    Cantidad INTEGER NOT NULL,
+                    Subtotal REAL NOT NULL,
+                    FOREIGN KEY (IdCompra) REFERENCES Compra(IdCompra),
+                    FOREIGN KEY (IdProducto) REFERENCES Productos(ProductoID)
+                );";
+
+                string crearAbonos = @"
+                CREATE TABLE IF NOT EXISTS Abono (
+                    IdAbono INTEGER PRIMARY KEY AUTOINCREMENT,
+                    IdCompra INTEGER NOT NULL,
+                    Fecha TEXT NOT NULL,
+                    Monto REAL NOT NULL,
+                    FOREIGN KEY (IdCompra) REFERENCES Compra(IdCompra)
+                );";
+
+
                 var comandos = new[]
                 {
                     crearTipoUsuarios,
                     crearUsuarios,
                     crearProductos,
                     crearClientes,
-                    crearVentas,
+                    crearCompras,
                     crearProovedores,
+                    crearDetalleCompra,
+                    crearAbonos,
                     insertRoles,
                     insertUsuario,
                 };
@@ -120,8 +155,6 @@ namespace LoginV1
                         comando.ExecuteNonQuery();
                     }
                 }
-
-
             }
         }
         public bool VerificarCredenciales(string nombreUsuario, string contraseña)
