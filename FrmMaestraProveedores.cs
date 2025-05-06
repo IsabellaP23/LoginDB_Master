@@ -161,7 +161,7 @@ namespace LoginV1
                 DataGridViewRow fila = dtgProveedor.Rows[e.RowIndex];
 
                 // Guarda el ID en una variable privada (sin mostrarlo)
-                idSeleccionado = Convert.ToInt32(fila.Cells["Id_Empresa"].Value);
+                idSeleccionado = Convert.ToInt32(fila.Cells["EmpresaID"].Value);
 
                 // Cargar el resto de los datos en los TextBox visibles
                 txtNombreEmpresa.Text = fila.Cells["Nombre_Empresa"].Value.ToString();
