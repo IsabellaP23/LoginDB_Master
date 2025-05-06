@@ -140,10 +140,10 @@ namespace LoginV1
             { "Correo", txtCorreoEmpresa.Text }
         };
 
-                Crud.Actualizar("Proovedores", datos, "Id_Empresa", idSeleccionado);
+                Crud.Actualizar("Proovedores", datos, "EmpresaID", idSeleccionado);
 
                 dtgProveedor.DataSource = Crud.Consultar("Proovedores");
-                dtgProveedor.Columns["Id_Empresa"].Visible = false;
+                dtgProveedor.Columns["EmpresaID"].Visible = true;
 
                 MessageBox.Show("Proveedor actualizado correctamente.");
                 idSeleccionado = -1; // Reseteamos
@@ -172,7 +172,8 @@ namespace LoginV1
 
         private void FrmMaestraProveedores_Load(object sender, EventArgs e)
         {
-
+            dtgProveedor.DataSource = Crud.Consultar("Proovedores");
+            dtgProveedor.Visible = true;
         }
     }
 }
