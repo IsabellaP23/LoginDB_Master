@@ -17,7 +17,6 @@ namespace LoginV1
         public frmBienvenido()
         {
             InitializeComponent();
-
         }
 
         public frmBienvenido(int rolID)
@@ -64,6 +63,8 @@ namespace LoginV1
 
         private void frmBienvenido_Load(object sender, EventArgs e)
         {
+            lblUser.Text = Sesion.NombreUsuario;
+
             btnProducto.Visible = false;
             btnClientes.Visible = false;
             btnProveedores.Visible = false;
