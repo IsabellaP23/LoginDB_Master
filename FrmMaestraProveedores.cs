@@ -17,6 +17,64 @@ namespace LoginV1
             InitializeComponent();
         }
         private int idSeleccionado = -1;
+        private int posicionActual = 0;
+
+        private void MostrarRegistro(int fila)
+        {
+
+            if (dtgProveedor.Rows.Count == 0 || fila < 0 || fila >= dtgProveedor.Rows.Count)
+            {
+                return;
+            }
+
+            // Evitar seleccionar la fila de nueva inserción si está habilitada
+            if (dtgProveedor.AllowUserToAddRows && fila == dtgProveedor.Rows.Count - 1)
+            {
+                return;
+            }
+
+            dtgProveedor.ClearSelection();
+            dtgProveedor.Rows[fila].Selected = true;
+
+            var row = dtgProveedor.Rows[fila];
+
+            if (row.Cells["Nombre_Empresa"].Value != null)
+            {
+                txtNombreEmpresa.Text = row.Cells["Nombre_Empresa"].Value.ToString();
+            }
+            else
+            {
+                txtNombreEmpresa.Text = "";
+            }
+
+            if (row.Cells["Telefono"].Value != null)
+            {
+                txtTelefono.Text = row.Cells["Telefono"].Value.ToString();
+            }
+            else
+            {
+                txtTelefono.Text = "";
+            }
+
+            if (row.Cells["Correo"].Value != null)
+            {
+                txtCorreoEmpresa.Text = row.Cells["Correo"].Value.ToString();
+            }
+            else
+            {
+                txtCorreoEmpresa.Text = "";
+            }
+
+            if (row.Cells["EmpresaID"].Value != null && int.TryParse(row.Cells["EmpresaID"].Value.ToString(), out int id))
+            {
+                idSeleccionado = id;
+            }
+            else
+            {
+                idSeleccionado = -1;
+            }
+        }
+
         private void txtIdempresa_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar==13)
@@ -174,6 +232,89 @@ namespace LoginV1
         {
             dtgProveedor.DataSource = Crud.Consultar("Proovedores");
             dtgProveedor.Visible = true;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+            if (dtgProveedor.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecciona un proveedor para eliminar.");
+                return;
+            }
+
+            try
+            {
+                int idProveedor = Convert.ToInt32(dtgProveedor.SelectedRows[0].Cells["EmpresaID"].Value);
+
+                var confirmar = MessageBox.Show("¿Estás seguro de eliminar este proveedor?", "Confirmar eliminación", MessageBoxButtons.YesNo);
+                if (confirmar != DialogResult.Yes)
+                    return;
+
+                Crud.Eliminar("Proovedores", "EmpresaID", idProveedor);
+
+                MessageBox.Show("Proveedor eliminado correctamente.");
+
+                dtgProveedor.DataSource = Crud.Consultar("Proovedores");
+                idSeleccionado = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar: " + ex.Message);
+            }
+        }
+
+        private void btnPrimerRegistro_Click(object sender, EventArgs e)
+        {
+            posicionActual = 0;
+            MostrarRegistro(posicionActual);
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            if (posicionActual < dtgProveedor.Rows.Count - 1)
+            {
+                posicionActual++;
+                MostrarRegistro(posicionActual);
+            }
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            if (posicionActual > 0)
+            {
+                posicionActual--;
+                MostrarRegistro(posicionActual);
+            }
+        }
+
+        private void btnUltimoRegistro_Click(object sender, EventArgs e)
+        {
+            if (dtgProveedor.Rows.Count > 0)
+            {
+                if (dtgProveedor.AllowUserToAddRows)
+                {
+                    posicionActual = dtgProveedor.Rows.Count - 2;
+                }
+                else
+                {
+                    posicionActual = dtgProveedor.Rows.Count - 1;
+                }
+
+                MostrarRegistro(posicionActual);
+            }
+        }
+
+        private void dtgProveedor_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dtgProveedor.SelectedRows.Count > 0)
+            {
+                var fila = dtgProveedor.SelectedRows[0];
+                txtNombreEmpresa.Text = fila.Cells["Nombre_Empresa"].Value.ToString();
+                txtTelefono.Text = fila.Cells["Telefono"].Value.ToString();
+                txtCorreoEmpresa.Text = fila.Cells["Correo"].Value.ToString();
+                idSeleccionado = Convert.ToInt32(fila.Cells["EmpresaID"].Value);
+            }
         }
     }
 }
