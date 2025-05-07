@@ -40,13 +40,13 @@ namespace LoginV1
 
                 string crearTipoUsuarios = @"
                 CREATE TABLE IF NOT EXISTS Tipo_Usuarios (
-                    Rol_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                    Rol_ID INTEGER PRIMARY,
                     NombreRol TEXT NOT NULL
                 );";
 
                 string crearUsuarios = @"
                 CREATE TABLE IF NOT EXISTS tbUsuarios (
-                    UsuarioID INTEGER PRIMARY KEY AUTOINCREMENT,
+                    UsuarioID INTEGER PRIMARY KEY,
                     Nombre_Usuario TEXT NOT NULL,
                     Contraseña TEXT NOT NULL,
                     Rol_ID INTEGER,

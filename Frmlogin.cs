@@ -27,9 +27,9 @@ namespace LoginV1
 
             if (db.VerificarCredenciales(usuario, contraseña))
             {
-                frmBienvenido bienvenido = new frmBienvenido();
-                bienvenido.lblUser.Text = txtUsuario.Text;
-                bienvenido.Show();
+                int rolID = db.ObtenerRolID(usuario);
+                frmBienvenido frm = new frmBienvenido(rolID);
+                frm.Show();
                 this.Hide();
             }
             else

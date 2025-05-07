@@ -18,12 +18,14 @@ namespace LoginV1
         public FrmMaestraRoles()
         {
             InitializeComponent();
-            cbRolID.Items.Add(new RolItem(1, "Admin"));
-            cbRolID.Items.Add(new RolItem(2, "Almacenista"));
-            cbRolID.Items.Add(new RolItem(3, "Proveedor"));
-            cbRolID.Items.Add(new RolItem(4, "Vendedor"));
-            cbRolID.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbRolID.Items.Add(new RolItem(1, "Admin"));
+            cmbRolID.Items.Add(new RolItem(2, "Almacenista"));
+            cmbRolID.Items.Add(new RolItem(3, "Proveedor"));
+            cmbRolID.Items.Add(new RolItem(4, "Vendedor"));
+            cmbRolID.DropDownStyle = ComboBoxStyle.DropDownList;
             CargarUsuarios();
+            txtUsuarioID.MaxLength = 10;
+            txtUsuarioID.KeyPress += SoloNumeros;
         }
         public class RolItem
         {
@@ -41,6 +43,12 @@ namespace LoginV1
                 return NombreRol;
             }
         }
+
+        private void SoloNumeros(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
         private void CargarUsuarios()
         {
             using (SQLiteConnection conn = new SQLiteConnection(connectionString))
@@ -57,15 +65,23 @@ namespace LoginV1
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (txtUsuarioID.Text.Length != 10 || cmbRolID.SelectedIndex == -1 ||
+                string.IsNullOrWhiteSpace(txtNombreUsuario.Text) || string.IsNullOrWhiteSpace(txtContraseña.Text))
+            {
+                MessageBox.Show("Por favor completa todos los campos correctamente.");
+                return;
+            }
+
             using (SQLiteConnection conn = new SQLiteConnection(connectionString))
             {
                 conn.Open();
                 string query = "INSERT INTO tbUsuarios (UsuarioID, Nombre_Usuario, Contraseña, Rol_ID) VALUES (@id, @nombre, @contra, @rol)";
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@id", txtUsuarioID.Text);
                     cmd.Parameters.AddWithValue("@nombre", txtNombreUsuario.Text);
                     cmd.Parameters.AddWithValue("@contra", txtContraseña.Text);
-                    var rolSeleccionado = (RolItem)cbRolID.SelectedItem;
+                    var rolSeleccionado = (RolItem)cmbRolID.SelectedItem;
                     cmd.Parameters.AddWithValue("@rol", rolSeleccionado.RolID);
                     try
                     {
@@ -115,7 +131,7 @@ namespace LoginV1
                 {
                     cmd.Parameters.AddWithValue("@nombre", txtNombreUsuario.Text);
                     cmd.Parameters.AddWithValue("@contra", txtContraseña.Text);
-                    var rolSeleccionado = (RolItem)cbRolID.SelectedItem;
+                    var rolSeleccionado = (RolItem)cmbRolID.SelectedItem;
                     cmd.Parameters.AddWithValue("@rol", rolSeleccionado.RolID);
                     int rows = cmd.ExecuteNonQuery();
                     if (rows > 0)
