@@ -154,6 +154,13 @@ namespace LoginV1
                 ActualizarCarrito();
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            FrmMaestraCliente frmMaestraCliente = new FrmMaestraCliente();  
+            frmMaestraCliente.Show();
+            this.Close();
+        }
     }
 
     public class CarritoItem

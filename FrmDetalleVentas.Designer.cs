@@ -250,7 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1190, 718);
+            this.ClientSize = new System.Drawing.Size(1282, 736);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblDetalleVenta);
             this.Controls.Add(this.label1);

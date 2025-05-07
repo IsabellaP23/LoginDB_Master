@@ -45,20 +45,27 @@ namespace LoginV1
 
         private void CargarCompras(int idCliente)
         {
-            using (var conn = new SQLiteConnection(cadena))
+            try
             {
-                conn.Open();
-                var query = @"
-                SELECT C.IdCompra, C.Fecha, C.Total, C.TipoPago, U.Nombre_Usuario AS Vendedor
-                FROM Compra C
-                JOIN tbUsuarios U ON C.IdVendedor = U.UsuarioID
-                WHERE C.IdCliente = @id";
-                var cmd = new SQLiteCommand(query, conn);
-                cmd.Parameters.AddWithValue("@id", idCliente);
-                var da = new SQLiteDataAdapter(cmd);
-                var dt = new DataTable();
-                da.Fill(dt);
-                dtgCompras.DataSource = dt;
+                using (var conn = new SQLiteConnection(cadena))
+                {
+                    conn.Open();
+                    var query = @"
+            SELECT C.IdCompra, C.Fecha, C.Total, C.TipoPago, U.Nombre_Usuario AS Vendedor
+            FROM Compra C
+            LEFT JOIN tbUsuarios U ON C.IdVendedor = U.UsuarioID
+            WHERE C.IdCliente = @id";
+                    var cmd = new SQLiteCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@id", idCliente);
+                    var da = new SQLiteDataAdapter(cmd);
+                    var dt = new DataTable();
+                    da.Fill(dt);
+                    dtgCompras.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar compras: " + ex.Message);
             }
         }
 
@@ -74,20 +81,28 @@ namespace LoginV1
 
         private void CargarDetalleCompra(int idCompra)
         {
-            using (var conn = new SQLiteConnection(cadena))
+            try
             {
-                conn.Open();
-                var query = @"
-                SELECT P.Nombre_Producto AS Producto, D.Cantidad, D.Subtotal
-                FROM DetalleCompra D
-                JOIN Productos P ON D.IdProducto = P.ProductoID
-                WHERE D.IdCompra = @id";
-                var cmd = new SQLiteCommand(query, conn);
-                cmd.Parameters.AddWithValue("@id", idCompra);
-                var da = new SQLiteDataAdapter(cmd);
-                var dt = new DataTable();
-                da.Fill(dt);
-                dtgDetalleCompras.DataSource = dt;
+                using (var conn = new SQLiteConnection(cadena))
+                {
+                    conn.Open();
+                    var query = @"
+            SELECT P.Nombre_Producto AS Producto, D.Cantidad, D.Subtotal
+            FROM DetalleCompra D
+            LEFT JOIN Productos P ON D.IdProducto = P.ProductoID
+            WHERE D.IdCompra = @id";
+
+                    var cmd = new SQLiteCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@id", idCompra);
+                    var da = new SQLiteDataAdapter(cmd);
+                    var dt = new DataTable();
+                    da.Fill(dt);
+                    dtgDetalleCompras.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar detalle de compra: " + ex.Message);
             }
         }
 

@@ -229,7 +229,7 @@
             this.btnRegistrarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
             this.btnRegistrarVenta.FlatAppearance.BorderSize = 0;
             this.btnRegistrarVenta.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
+            this.btnRegistrarVenta.ForeColor = System.Drawing.Color.Black;
             this.btnRegistrarVenta.Location = new System.Drawing.Point(901, 503);
             this.btnRegistrarVenta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegistrarVenta.Name = "btnRegistrarVenta";

@@ -25,6 +25,7 @@ namespace LoginV1
                 Console.WriteLine("Base de datos creada.");
                 CrearTablas();
             }
+
             else
             {
 
@@ -68,7 +69,7 @@ namespace LoginV1
                     Telefono TEXT NOT NULL
                 );";
 
-                /*string crearVentas = @"
+                string crearVentas = @"
                 CREATE TABLE IF NOT EXISTS Ventas (
                     VentaID INTEGER PRIMARY KEY AUTOINCREMENT,
                     ClienteID INTEGER,
@@ -78,7 +79,7 @@ namespace LoginV1
                     Precio_Total REAL NOT NULL,
                     FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID),
                     FOREIGN KEY (ProductoID) REFERENCES Productos(ProductoID)
-                );";*/
+                );";
 
                 string crearProovedores = @"
                 CREATE TABLE IF NOT EXISTS Proovedores (
@@ -140,6 +141,7 @@ namespace LoginV1
                     crearUsuarios,
                     crearProductos,
                     crearClientes,
+                    crearVentas,
                     crearCompras,
                     crearProovedores,
                     crearDetalleCompra,
