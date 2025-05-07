@@ -127,6 +127,7 @@
             this.btnConsultar.TabIndex = 4;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             this.btnConsultar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnConsultar_KeyPress);
             // 
             // btnActulizar
@@ -139,6 +140,7 @@
             this.btnActulizar.TabIndex = 5;
             this.btnActulizar.Text = "Actulizar";
             this.btnActulizar.UseVisualStyleBackColor = false;
+            this.btnActulizar.Click += new System.EventHandler(this.btnActulizar_Click);
             this.btnActulizar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnActulizar_KeyPress);
             // 
             // btnEliminar
@@ -151,6 +153,7 @@
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             this.btnEliminar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnEliminar_KeyPress);
             // 
             // dtgProveedor
@@ -167,6 +170,8 @@
             this.dtgProveedor.RowTemplate.Height = 24;
             this.dtgProveedor.Size = new System.Drawing.Size(773, 377);
             this.dtgProveedor.TabIndex = 12;
+            this.dtgProveedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProveedor_CellClick);
+            this.dtgProveedor.SelectionChanged += new System.EventHandler(this.dtgProveedor_SelectionChanged);
             // 
             // ClmNombre
             // 
@@ -199,6 +204,7 @@
             this.btnPrimerRegistro.TabIndex = 7;
             this.btnPrimerRegistro.Text = "Primer Registro";
             this.btnPrimerRegistro.UseVisualStyleBackColor = false;
+            this.btnPrimerRegistro.Click += new System.EventHandler(this.btnPrimerRegistro_Click);
             // 
             // btnSiguiente
             // 
@@ -210,6 +216,7 @@
             this.btnSiguiente.TabIndex = 8;
             this.btnSiguiente.Text = "Siguiente Registro";
             this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // btnAnterior
             // 
@@ -221,6 +228,7 @@
             this.btnAnterior.TabIndex = 9;
             this.btnAnterior.Text = "Anterior Registro";
             this.btnAnterior.UseVisualStyleBackColor = false;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // btnUltimoRegistro
             // 
@@ -232,6 +240,7 @@
             this.btnUltimoRegistro.TabIndex = 10;
             this.btnUltimoRegistro.Text = "Ultimo Registro";
             this.btnUltimoRegistro.UseVisualStyleBackColor = false;
+            this.btnUltimoRegistro.Click += new System.EventHandler(this.btnUltimoRegistro_Click);
             // 
             // lblProveedores
             // 
@@ -272,6 +281,7 @@
             this.Name = "FrmMaestraProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maestra Proveedor  ";
+            this.Load += new System.EventHandler(this.FrmMaestraProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgProveedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
