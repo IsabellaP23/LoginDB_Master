@@ -43,6 +43,11 @@ namespace LoginV1
                     this.Close();
                 }
             }
+
+
+
+
+
         }
         private void txtUsuario_KeyPress_1(object sender, KeyPressEventArgs e)
         {

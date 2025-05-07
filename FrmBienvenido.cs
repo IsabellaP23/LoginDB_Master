@@ -17,6 +17,7 @@ namespace LoginV1
         public frmBienvenido()
         {
             InitializeComponent();
+
         }
 
         public frmBienvenido(int rolID)
