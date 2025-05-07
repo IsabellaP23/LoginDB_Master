@@ -263,5 +263,12 @@ namespace LoginV1
                 }
             }
         }
+
+        private void btnRegistrarVenta_Click(object sender, EventArgs e)
+        {
+            FrmRegistrarVentas registrarVentas = new FrmRegistrarVentas();  
+            registrarVentas.Show();
+            this.Close();
+        }
     }
 }

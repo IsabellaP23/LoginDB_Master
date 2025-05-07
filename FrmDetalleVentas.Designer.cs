@@ -36,13 +36,13 @@
             this.lblDetalleCompra = new System.Windows.Forms.Label();
             this.lblAbonos = new System.Windows.Forms.Label();
             this.grpAgregarAbono = new System.Windows.Forms.GroupBox();
-            this.lblMontoAbonos = new System.Windows.Forms.Label();
-            this.txtMontoAbono = new System.Windows.Forms.TextBox();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.dtpFechaAbono = new System.Windows.Forms.DateTimePicker();
             this.btnAgregarAbono = new System.Windows.Forms.Button();
+            this.dtpFechaAbono = new System.Windows.Forms.DateTimePicker();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.txtMontoAbono = new System.Windows.Forms.TextBox();
+            this.lblMontoAbonos = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblProveedores = new System.Windows.Forms.Label();
+            this.lblDetalleVenta = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleCompras)).BeginInit();
@@ -158,44 +158,6 @@
             this.grpAgregarAbono.TabStop = false;
             this.grpAgregarAbono.Text = "Agregar un Nuevo Abono";
             // 
-            // lblMontoAbonos
-            // 
-            this.lblMontoAbonos.AutoSize = true;
-            this.lblMontoAbonos.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMontoAbonos.ForeColor = System.Drawing.Color.Black;
-            this.lblMontoAbonos.Location = new System.Drawing.Point(6, 39);
-            this.lblMontoAbonos.Name = "lblMontoAbonos";
-            this.lblMontoAbonos.Size = new System.Drawing.Size(152, 24);
-            this.lblMontoAbonos.TabIndex = 8;
-            this.lblMontoAbonos.Text = "Monto del Abono:";
-            // 
-            // txtMontoAbono
-            // 
-            this.txtMontoAbono.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMontoAbono.Location = new System.Drawing.Point(6, 66);
-            this.txtMontoAbono.Name = "txtMontoAbono";
-            this.txtMontoAbono.Size = new System.Drawing.Size(226, 30);
-            this.txtMontoAbono.TabIndex = 1;
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.ForeColor = System.Drawing.Color.Black;
-            this.lblFecha.Location = new System.Drawing.Point(260, 39);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(145, 24);
-            this.lblFecha.TabIndex = 10;
-            this.lblFecha.Text = "Fecha del Abono:";
-            // 
-            // dtpFechaAbono
-            // 
-            this.dtpFechaAbono.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaAbono.Location = new System.Drawing.Point(264, 66);
-            this.dtpFechaAbono.Name = "dtpFechaAbono";
-            this.dtpFechaAbono.Size = new System.Drawing.Size(144, 30);
-            this.dtpFechaAbono.TabIndex = 2;
-            // 
             // btnAgregarAbono
             // 
             this.btnAgregarAbono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
@@ -209,6 +171,44 @@
             this.btnAgregarAbono.UseVisualStyleBackColor = false;
             this.btnAgregarAbono.Click += new System.EventHandler(this.btnAgregarAbono_Click);
             // 
+            // dtpFechaAbono
+            // 
+            this.dtpFechaAbono.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaAbono.Location = new System.Drawing.Point(264, 66);
+            this.dtpFechaAbono.Name = "dtpFechaAbono";
+            this.dtpFechaAbono.Size = new System.Drawing.Size(144, 30);
+            this.dtpFechaAbono.TabIndex = 2;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.ForeColor = System.Drawing.Color.Black;
+            this.lblFecha.Location = new System.Drawing.Point(260, 39);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(145, 24);
+            this.lblFecha.TabIndex = 10;
+            this.lblFecha.Text = "Fecha del Abono:";
+            // 
+            // txtMontoAbono
+            // 
+            this.txtMontoAbono.Font = new System.Drawing.Font("Palatino Linotype", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMontoAbono.Location = new System.Drawing.Point(6, 66);
+            this.txtMontoAbono.Name = "txtMontoAbono";
+            this.txtMontoAbono.Size = new System.Drawing.Size(226, 30);
+            this.txtMontoAbono.TabIndex = 1;
+            // 
+            // lblMontoAbonos
+            // 
+            this.lblMontoAbonos.AutoSize = true;
+            this.lblMontoAbonos.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMontoAbonos.ForeColor = System.Drawing.Color.Black;
+            this.lblMontoAbonos.Location = new System.Drawing.Point(6, 39);
+            this.lblMontoAbonos.Name = "lblMontoAbonos";
+            this.lblMontoAbonos.Size = new System.Drawing.Size(152, 24);
+            this.lblMontoAbonos.TabIndex = 8;
+            this.lblMontoAbonos.Text = "Monto del Abono:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -220,17 +220,17 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Seleccione un cliente";
             // 
-            // lblProveedores
+            // lblDetalleVenta
             // 
-            this.lblProveedores.AutoSize = true;
-            this.lblProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(203)))), ((int)(((byte)(208)))));
-            this.lblProveedores.Font = new System.Drawing.Font("Palatino Linotype", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProveedores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
-            this.lblProveedores.Location = new System.Drawing.Point(8, 9);
-            this.lblProveedores.Name = "lblProveedores";
-            this.lblProveedores.Size = new System.Drawing.Size(1168, 50);
-            this.lblProveedores.TabIndex = 18;
-            this.lblProveedores.Text = "                                                Detalle de Ventas                " +
+            this.lblDetalleVenta.AutoSize = true;
+            this.lblDetalleVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(203)))), ((int)(((byte)(208)))));
+            this.lblDetalleVenta.Font = new System.Drawing.Font("Palatino Linotype", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetalleVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
+            this.lblDetalleVenta.Location = new System.Drawing.Point(8, 9);
+            this.lblDetalleVenta.Name = "lblDetalleVenta";
+            this.lblDetalleVenta.Size = new System.Drawing.Size(1168, 50);
+            this.lblDetalleVenta.TabIndex = 18;
+            this.lblDetalleVenta.Text = "                                                Detalle de Ventas                " +
     "                                ";
             // 
             // btnVolver
@@ -252,7 +252,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1190, 718);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.lblProveedores);
+            this.Controls.Add(this.lblDetalleVenta);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.grpAgregarAbono);
             this.Controls.Add(this.lblAbonos);
@@ -292,7 +292,7 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.TextBox txtMontoAbono;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblProveedores;
+        private System.Windows.Forms.Label lblDetalleVenta;
         private System.Windows.Forms.Button btnVolver;
     }
 }

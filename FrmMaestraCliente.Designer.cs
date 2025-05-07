@@ -44,6 +44,7 @@
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnPrimerRegistro = new System.Windows.Forms.Button();
             this.lblCorreoCliente = new System.Windows.Forms.Label();
+            this.btnRegistrarVenta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -223,12 +224,28 @@
             this.lblCorreoCliente.TabIndex = 15;
             this.lblCorreoCliente.Text = "Correo";
             // 
+            // btnRegistrarVenta
+            // 
+            this.btnRegistrarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnRegistrarVenta.FlatAppearance.BorderSize = 0;
+            this.btnRegistrarVenta.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
+            this.btnRegistrarVenta.Location = new System.Drawing.Point(901, 503);
+            this.btnRegistrarVenta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRegistrarVenta.Name = "btnRegistrarVenta";
+            this.btnRegistrarVenta.Size = new System.Drawing.Size(192, 50);
+            this.btnRegistrarVenta.TabIndex = 16;
+            this.btnRegistrarVenta.Text = "Registrar venta";
+            this.btnRegistrarVenta.UseVisualStyleBackColor = false;
+            this.btnRegistrarVenta.Click += new System.EventHandler(this.btnRegistrarVenta_Click);
+            // 
             // FrmMaestraCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(1278, 597);
+            this.Controls.Add(this.btnRegistrarVenta);
             this.Controls.Add(this.lblCorreoCliente);
             this.Controls.Add(this.btnUltimoRegistro);
             this.Controls.Add(this.btnAnterior);
@@ -272,5 +289,6 @@
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Button btnPrimerRegistro;
         private System.Windows.Forms.Label lblCorreoCliente;
+        private System.Windows.Forms.Button btnRegistrarVenta;
     }
 }

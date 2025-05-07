@@ -28,7 +28,7 @@ namespace LoginV1
             if (db.VerificarCredenciales(usuario, contraseña))
             {
                 frmBienvenido bienvenido = new frmBienvenido();
-                bienvenido.lblUser.Text = txtUsuario.Text; 
+                bienvenido.lblUser.Text = txtUsuario.Text;
                 bienvenido.Show();
                 this.Hide();
             }
@@ -78,7 +78,7 @@ namespace LoginV1
                     frmBienvenido bienvenido = new frmBienvenido();
                     bienvenido.lblUser.Text = txtUsuario.Text;
                     bienvenido.Show();
-                    this.Hide();
+                    this.Hide();              
                 }
                 else
                 {

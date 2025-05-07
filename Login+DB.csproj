@@ -99,6 +99,12 @@
     <Compile Include="FrmMaestraRoles.Designer.cs">
       <DependentUpon>FrmMaestraRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRegistrarVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistrarVentas.Designer.cs">
+      <DependentUpon>FrmRegistrarVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="storedatabase.cs" />
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMaestraRoles.resx">
       <DependentUpon>FrmMaestraRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistrarVentas.resx">
+      <DependentUpon>FrmRegistrarVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
