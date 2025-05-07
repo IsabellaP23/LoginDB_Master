@@ -22,32 +22,7 @@ namespace LoginV1
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text;
-            string contraseña = txtContraseña.Text;
-
-            if (db.VerificarCredenciales(usuario, contraseña))
-            {
-                int rolID = db.ObtenerRolID(usuario);
-                frmBienvenido frm = new frmBienvenido(rolID);
-                frm.Show();
-                this.Hide();
-            }
-            else
-            {
-
-                MessageBox.Show("Usuario o contraseña incorrectos");
-                cont++;
-                if (cont == 3)
-                {
-                    MessageBox.Show("Demasiados intentos incorrectos, inténtelo más tarde :)");
-                    this.Close();
-                }
-            }
-
-
-
-
-
+            IniciarSesion();
         }
         private void txtUsuario_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -74,31 +49,44 @@ namespace LoginV1
         {
             if (e.KeyChar == 13)
             {
-                btnOk.PerformClick();
-                string usuario = txtUsuario.Text;
-                string contraseña = txtContraseña.Text;
+                IniciarSesion();
+            }
+        }
 
-                if (db.VerificarCredenciales(usuario, contraseña))
-                {
-                    frmBienvenido bienvenido = new frmBienvenido();
-                    bienvenido.lblUser.Text = txtUsuario.Text;
-                    bienvenido.Show();
-                    this.Hide();              
-                }
-                else
-                {
-                    cont++;
-                    MessageBox.Show("Usuario o contraseña incorrectos");
+        private void IniciarSesion()
+        {
+            string usuario = txtUsuario.Text;
+            string contraseña = txtContraseña.Text;
 
-                    // Si hay demasiados intentos fallidos, cierra el formulario
-                    if (cont == 3)
-                    {
-                        MessageBox.Show("Demasiados intentos incorrectos, inténtelo más tarde :)");
-                        this.Close();
-                    }
+            if (db.VerificarCredenciales(usuario, contraseña))
+            {
+                // Guardar usuario logueado en Sesion
+                Sesion.UsuarioID = db.ObtenerUsuarioID(usuario);
+                Sesion.NombreUsuario = usuario;
+
+                int rolID = db.ObtenerRolID(usuario);
+                frmBienvenido frm = new frmBienvenido(rolID);
+                frm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos");
+                cont++;
+                if (cont == 3)
+                {
+                    MessageBox.Show("Demasiados intentos incorrectos, inténtelo más tarde :)");
+                    this.Close();
                 }
             }
         }
 
+
+    }
+
+    public static class Sesion
+    {
+        public static int UsuarioID { get; set; }
+        public static string NombreUsuario { get; set; }
     }
 }
