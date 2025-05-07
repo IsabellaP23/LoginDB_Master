@@ -15,6 +15,7 @@ namespace LoginV1
         public frmBienvenido()
         {
             InitializeComponent();
+
         }
 
         private void btnRol_Click(object sender, EventArgs e)

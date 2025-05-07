@@ -42,7 +42,16 @@ namespace LoginV1
                     MessageBox.Show("Demasiados intentos incorrectos, inténtelo más tarde :)");
                     this.Close();
                 }
+<<<<<<< Updated upstream
             }*/
+=======
+            }
+
+
+
+
+
+>>>>>>> Stashed changes
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
