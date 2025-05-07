@@ -16,5 +16,10 @@ namespace LoginV1
         {
             InitializeComponent();
         }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

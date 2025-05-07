@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblBienvenido = new System.Windows.Forms.Label();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.btnRol = new System.Windows.Forms.Button();
-            this.btnProducto = new System.Windows.Forms.Button();
+            this.btnProveedores = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
+            this.btnProducto = new System.Windows.Forms.Button();
+            this.btnRol = new System.Windows.Forms.Button();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.lblBienvenido = new System.Windows.Forms.Label();
+            this.btnCompras = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
 <<<<<<< Updated upstream
@@ -134,35 +136,29 @@
             // 
 <<<<<<< Updated upstream
             this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(307, 111);
+            this.lblUser.Font = new System.Drawing.Font("Palatino Linotype", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
+            this.lblUser.Location = new System.Drawing.Point(300, 108);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(178, 51);
-            this.lblUser.TabIndex = 1;
+            this.lblUser.Size = new System.Drawing.Size(145, 47);
+            this.lblUser.TabIndex = 7;
             this.lblUser.Text = "Usuario";
             // 
-            // btnRol
+            // lblBienvenido
             // 
-            this.btnRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRol.Location = new System.Drawing.Point(81, 290);
-            this.btnRol.Name = "btnRol";
-            this.btnRol.Size = new System.Drawing.Size(148, 44);
-            this.btnRol.TabIndex = 0;
-            this.btnRol.Text = "Roles";
-            this.btnRol.UseVisualStyleBackColor = true;
-            this.btnRol.Click += new System.EventHandler(this.btnRol_Click);
+            this.lblBienvenido.AutoSize = true;
+            this.lblBienvenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(203)))), ((int)(((byte)(208)))));
+            this.lblBienvenido.Font = new System.Drawing.Font("Palatino Linotype", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
+            this.lblBienvenido.Location = new System.Drawing.Point(9, 7);
+            this.lblBienvenido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBienvenido.Name = "lblBienvenido";
+            this.lblBienvenido.Size = new System.Drawing.Size(748, 86);
+            this.lblBienvenido.TabIndex = 5;
+            this.lblBienvenido.Text = "           Bienvenido :)          ";
             // 
-            // btnProducto
-            // 
-            this.btnProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProducto.Location = new System.Drawing.Point(326, 290);
-            this.btnProducto.Name = "btnProducto";
-            this.btnProducto.Size = new System.Drawing.Size(148, 44);
-            this.btnProducto.TabIndex = 1;
-            this.btnProducto.Text = "Productos";
-            this.btnProducto.UseVisualStyleBackColor = true;
-            // 
-            // btnClientes
+            // btnCompras
             // 
             this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.Location = new System.Drawing.Point(568, 290);
@@ -171,44 +167,21 @@
             this.btnClientes.TabIndex = 2;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
-=======
-            this.btnCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
-            this.btnCompras.FlatAppearance.BorderSize = 0;
-            this.btnCompras.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(32)))), ((int)(((byte)(43)))));
-            this.btnCompras.Location = new System.Drawing.Point(395, 348);
-            this.btnCompras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCompras.Name = "btnCompras";
-            this.btnCompras.Size = new System.Drawing.Size(189, 50);
-            this.btnCompras.TabIndex = 2;
-            this.btnCompras.Text = "Compras";
-            this.btnCompras.UseVisualStyleBackColor = false;
-            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
->>>>>>> Stashed changes
             // 
             // frmBienvenido
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< Updated upstream
             this.ClientSize = new System.Drawing.Size(800, 450);
-=======
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
-            this.ClientSize = new System.Drawing.Size(967, 518);
-            this.Controls.Add(this.btnCompras);
-            this.Controls.Add(this.btnProveedores);
->>>>>>> Stashed changes
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnProducto);
             this.Controls.Add(this.btnRol);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.lblBienvenido);
-<<<<<<< Updated upstream
-=======
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
->>>>>>> Stashed changes
             this.Name = "frmBienvenido";
-            this.Text = "Bienvenido";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FrmBienvenido";
+            this.Load += new System.EventHandler(this.frmBienvenido_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,10 +189,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblBienvenido;
-        public System.Windows.Forms.Label lblUser;
-        private System.Windows.Forms.Button btnRol;
-        private System.Windows.Forms.Button btnProducto;
+        private System.Windows.Forms.Button btnProveedores;
         private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.Button btnProducto;
+        private System.Windows.Forms.Button btnRol;
+        public System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Label lblBienvenido;
+        private System.Windows.Forms.Button btnCompras;
     }
 }
