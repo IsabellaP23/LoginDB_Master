@@ -196,6 +196,22 @@ namespace LoginV1
             }
         }
 
+        public int ObtenerUsuarioID(string nombreUsuario)
+        {
+            using (var conexion = new SQLiteConnection($"Data Source={dbFile};Version=3;"))
+            {
+                conexion.Open();
 
+                string consulta = "SELECT UsuarioID FROM tbUsuarios WHERE Nombre_Usuario = @usuario";
+
+                using (var comando = new SQLiteCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@usuario", nombreUsuario);
+
+                    object resultado = comando.ExecuteScalar();
+                    return resultado != null ? Convert.ToInt32(resultado) : -1;
+                }
+            }
+        }
     }
 }

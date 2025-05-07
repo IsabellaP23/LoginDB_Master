@@ -42,7 +42,7 @@
             this.lblProducto = new System.Windows.Forms.Label();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.lblTotalPagar = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTipoPago = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrito)).BeginInit();
@@ -209,15 +209,15 @@
             this.lblTotalPagar.TabIndex = 23;
             this.lblTotalPagar.Text = "Total a pagar\r\n";
             // 
-            // label1
+            // lblTipoPago
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(249, 517);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 24);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Seleccione tipo de pago";
+            this.lblTipoPago.AutoSize = true;
+            this.lblTipoPago.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoPago.Location = new System.Drawing.Point(249, 517);
+            this.lblTipoPago.Name = "lblTipoPago";
+            this.lblTipoPago.Size = new System.Drawing.Size(188, 24);
+            this.lblTipoPago.TabIndex = 24;
+            this.lblTipoPago.Text = "Seleccione tipo de pago";
             // 
             // btnVolver
             // 
@@ -239,7 +239,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(1115, 597);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTipoPago);
             this.Controls.Add(this.lblTotalPagar);
             this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.lblProducto);
@@ -280,7 +280,7 @@
         private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.Label lblTotalPagar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTipoPago;
         private System.Windows.Forms.Button btnVolver;
     }
 }

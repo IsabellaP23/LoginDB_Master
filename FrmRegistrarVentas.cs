@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using static System.Collections.Specialized.BitVector32;
 
 namespace LoginV1
 {
@@ -20,25 +21,10 @@ namespace LoginV1
         {
             InitializeComponent();
 
-            //vendedorID = idVendedor;
-            CargarNombreVendedor();
+            vendedorID = Sesion.UsuarioID;
+            lblNombreVendedor.Text = Sesion.NombreUsuario;
             CargarClientes();
             CargarProductos();
-        }
-
-        private void CargarNombreVendedor()
-        {
-            using (var conn = new SQLiteConnection(cadena))
-            {
-                conn.Open();
-                var cmd = new SQLiteCommand("SELECT Nombre_Usuario FROM tbUsuarios WHERE UsuarioID = @id", conn);
-                cmd.Parameters.AddWithValue("@id", vendedorID);
-                object result = cmd.ExecuteScalar();
-                if (result != null)
-                {
-                    lblNombreVendedor.Text = result.ToString();
-                }
-            }
         }
 
         private void CargarClientes()
