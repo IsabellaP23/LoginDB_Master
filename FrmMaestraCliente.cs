@@ -270,5 +270,12 @@ namespace LoginV1
             registrarVentas.Show();
             this.Close();
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmBienvenido frmBienvenido = new frmBienvenido();
+            frmBienvenido.Show();
+            this.Close();
+        }
     }
 }
