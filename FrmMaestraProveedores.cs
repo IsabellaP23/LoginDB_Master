@@ -169,6 +169,9 @@ namespace LoginV1
                 dtgProveedor.DataSource = Crud.Consultar("Proovedores");
 
                 MessageBox.Show("Proveedor agregado correctamente.");
+                txtNombreEmpresa.Clear();
+                txtTelefono.Clear();
+                txtCorreoEmpresa.Clear();
             }
             catch (Exception ex)
             {
@@ -179,6 +182,9 @@ namespace LoginV1
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             dtgProveedor.DataSource = Crud.Consultar("Proovedores");
+            txtNombreEmpresa.Clear();
+            txtTelefono.Clear();
+            txtCorreoEmpresa.Clear();
         }
 
         private void FrmMaestraProveedores_Load(object sender, EventArgs e)
@@ -212,6 +218,9 @@ namespace LoginV1
 
                 MessageBox.Show("Proveedor actualizado correctamente.");
                 idSeleccionado = -1; // Reseteamos
+                txtNombreEmpresa.Clear();
+                txtTelefono.Clear();
+                txtCorreoEmpresa.Clear();
             }
             catch (Exception ex)
             {
@@ -243,6 +252,9 @@ namespace LoginV1
 
                 dtgProveedor.DataSource = Crud.Consultar("Proovedores");
                 idSeleccionado = -1;
+                txtNombreEmpresa.Clear();
+                txtTelefono.Clear();
+                txtCorreoEmpresa.Clear();
             }
             catch (Exception ex)
             {
