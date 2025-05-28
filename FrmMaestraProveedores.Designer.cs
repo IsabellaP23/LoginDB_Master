@@ -44,6 +44,10 @@
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnUltimoRegistro = new System.Windows.Forms.Button();
             this.lblProveedores = new System.Windows.Forms.Label();
+            this.btnExportar = new System.Windows.Forms.Button();
+            this.btnImportar = new System.Windows.Forms.Button();
+            this.lblTipo = new System.Windows.Forms.Label();
+            this.cboFormatos = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProveedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -227,12 +231,62 @@
             this.lblProveedores.Text = "                                                   Proveedor                     " +
     "                                    ";
             // 
+            // btnExportar
+            // 
+            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnExportar.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportar.Location = new System.Drawing.Point(908, 140);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(125, 35);
+            this.btnExportar.TabIndex = 18;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
+            // btnImportar
+            // 
+            this.btnImportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnImportar.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportar.Location = new System.Drawing.Point(908, 78);
+            this.btnImportar.Name = "btnImportar";
+            this.btnImportar.Size = new System.Drawing.Size(125, 35);
+            this.btnImportar.TabIndex = 19;
+            this.btnImportar.Text = "Importar";
+            this.btnImportar.UseVisualStyleBackColor = false;
+            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipo.Location = new System.Drawing.Point(1100, 81);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(115, 20);
+            this.lblTipo.TabIndex = 20;
+            this.lblTipo.Text = "Tipo de Archivo";
+            // 
+            // cboFormatos
+            // 
+            this.cboFormatos.FormattingEnabled = true;
+            this.cboFormatos.Items.AddRange(new object[] {
+            "XML",
+            "TXT",
+            "CSV"});
+            this.cboFormatos.Location = new System.Drawing.Point(1104, 116);
+            this.cboFormatos.Name = "cboFormatos";
+            this.cboFormatos.Size = new System.Drawing.Size(121, 24);
+            this.cboFormatos.TabIndex = 21;
+            // 
             // FrmMaestraProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(1261, 560);
+            this.Controls.Add(this.cboFormatos);
+            this.Controls.Add(this.lblTipo);
+            this.Controls.Add(this.btnImportar);
+            this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.lblProveedores);
             this.Controls.Add(this.btnUltimoRegistro);
             this.Controls.Add(this.btnAnterior);
@@ -277,5 +331,9 @@
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button btnUltimoRegistro;
         private System.Windows.Forms.Label lblProveedores;
+        private System.Windows.Forms.Button btnExportar;
+        private System.Windows.Forms.Button btnImportar;
+        private System.Windows.Forms.Label lblTipo;
+        private System.Windows.Forms.ComboBox cboFormatos;
     }
 }

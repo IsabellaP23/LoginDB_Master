@@ -337,5 +337,22 @@ namespace LoginV1
             }
 
         }
+
+        private void btnImportar_Click(object sender, EventArgs e)
+        {
+            ArchivoImportador.ImportarArchivoYMostrar(dtgProveedor);
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            string tipo = cboFormatos.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(tipo))
+            {
+                MessageBox.Show("Selecciona un tipo de archivo primero.", "Exportar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ArchivoExportador.Exportar(dtgProveedor, tipo);
+        }
     }
 }
