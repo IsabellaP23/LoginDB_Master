@@ -49,6 +49,7 @@
             this.lblTipo = new System.Windows.Forms.Label();
             this.cboFormatos = new System.Windows.Forms.ComboBox();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnExportarPDF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProveedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -282,7 +283,7 @@
             // 
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
             this.btnVolver.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(1039, 496);
+            this.btnVolver.Location = new System.Drawing.Point(1090, 492);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(125, 35);
             this.btnVolver.TabIndex = 22;
@@ -290,12 +291,25 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // btnExportarPDF
+            // 
+            this.btnExportarPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnExportarPDF.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarPDF.Location = new System.Drawing.Point(908, 492);
+            this.btnExportarPDF.Name = "btnExportarPDF";
+            this.btnExportarPDF.Size = new System.Drawing.Size(165, 35);
+            this.btnExportarPDF.TabIndex = 23;
+            this.btnExportarPDF.Text = "Exportar PDF";
+            this.btnExportarPDF.UseVisualStyleBackColor = false;
+            this.btnExportarPDF.Click += new System.EventHandler(this.btnExportarPDF_Click);
+            // 
             // FrmMaestraProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(1261, 560);
+            this.Controls.Add(this.btnExportarPDF);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.cboFormatos);
             this.Controls.Add(this.lblTipo);
@@ -350,5 +364,6 @@
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.ComboBox cboFormatos;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnExportarPDF;
     }
 }
