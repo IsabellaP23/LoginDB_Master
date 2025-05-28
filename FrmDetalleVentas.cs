@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Drawing.Printing;
 
 namespace LoginV1
 {
     public partial class FrmDetalleVentas : Form
     {
         private static string cadena = "Data Source=tienda.db;Version=3;";
+        private PrintDocument printDocument = new PrintDocument();
+        private int filaActual = 0;
         public FrmDetalleVentas()
         {
             InitializeComponent();
@@ -152,6 +155,71 @@ namespace LoginV1
             frmBienvenido frmBienvenido = new frmBienvenido();
             frmBienvenido.Show();
             this.Close();
+        }
+        private void ImprimirPagina(object sender, PrintPageEventArgs e)
+        {
+            Font fuente = new Font("Arial", 10);
+            int anchoPagina = e.MarginBounds.Width;
+            int altoPagina = e.MarginBounds.Height;
+            int x = e.MarginBounds.Left;
+            int y = e.MarginBounds.Top;
+            int alturaFila = 25;
+            bool hayMasPaginas = false;
+
+            // Dibujar encabezados
+            for (int j = 0; j < dtgCompras.Columns.Count; j++)
+            {
+                string textoColumna = dtgCompras.Columns[j].HeaderText;
+                e.Graphics.DrawString(textoColumna, fuente, Brushes.Black, x, y);
+                x += dtgCompras.Columns[j].Width / 2; // Ajuste del ancho
+            }
+
+            y += alturaFila; // Espacio después del encabezado
+
+            // Dibujar filas
+            while (filaActual < dtgCompras.Rows.Count)
+            {
+                DataGridViewRow fila = dtgCompras.Rows[filaActual];
+                if (fila.IsNewRow)
+                {
+                    filaActual++;
+                    continue;
+                }
+
+                x = e.MarginBounds.Left;
+
+                for (int j = 0; j < dtgCompras.Columns.Count; j++)
+                {
+                    string valor = fila.Cells[j].Value?.ToString() ?? "";
+                    e.Graphics.DrawString(valor, fuente, Brushes.Black, x, y);
+                    x += dtgCompras.Columns[j].Width / 2;
+                }
+
+                y += alturaFila;
+
+                if (y > altoPagina - alturaFila)
+                {
+                    hayMasPaginas = true;
+                    break;
+                }
+
+                filaActual++;
+            }
+
+            e.HasMorePages = hayMasPaginas;
+        }
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            PrintPreviewDialog printPreviewDialog1 = new PrintPreviewDialog();
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Bitmap bmp = new Bitmap(dtgCompras.Width, dtgCompras.Height);
+            dtgCompras.DrawToBitmap(bmp, new Rectangle(0, 0, dtgCompras.Width, dtgCompras.Height));
+            e.Graphics.DrawImage(bmp, 100, 100);
         }
     }
 }
