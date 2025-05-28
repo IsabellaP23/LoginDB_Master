@@ -354,5 +354,12 @@ namespace LoginV1
 
             ArchivoExportador.Exportar(dtgProveedor, tipo);
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            frmBienvenido frmBienvenido = new frmBienvenido();
+            frmBienvenido.Show();
+            this.Close();
+        }
     }
 }
