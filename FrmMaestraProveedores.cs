@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.IO;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 
 namespace LoginV1
 {
@@ -22,53 +20,6 @@ namespace LoginV1
         private int idSeleccionado = -1;
         private int posicionActual = 0;
 
-        private void ExportarDataGridViewAPdf(DataGridView dgv, string nombreArchivo)
-        {
-            if (dgv.Rows.Count > 0)
-            {
-                // Crear documento
-                Document doc = new Document(PageSize.A4, 10f, 10f, 20f, 10f);
-                PdfWriter.GetInstance(doc, new FileStream(nombreArchivo, FileMode.Create));
-                doc.Open();
-
-                // Fuente
-                BaseFont bf = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
-                Font font = new Font(bf, 10);
-
-                // Tabla con columnas del DataGridView
-                PdfPTable pdfTable = new PdfPTable(dgv.Columns.Count);
-                pdfTable.WidthPercentage = 100;
-
-                // Agregar encabezados
-                foreach (DataGridViewColumn columna in dgv.Columns)
-                {
-                    PdfPCell celda = new PdfPCell(new Phrase(columna.HeaderText, font));
-                    celda.BackgroundColor = BaseColor.LIGHT_GRAY;
-                    pdfTable.AddCell(celda);
-                }
-
-                // Agregar datos
-                foreach (DataGridViewRow fila in dgv.Rows)
-                {
-                    if (fila.IsNewRow) continue;
-
-                    foreach (DataGridViewCell celda in fila.Cells)
-                    {
-                        string texto = celda.Value?.ToString() ?? "";
-                        pdfTable.AddCell(new Phrase(texto, font));
-                    }
-                }
-
-                doc.Add(pdfTable);
-                doc.Close();
-
-                MessageBox.Show("PDF generado correctamente en:\n" + nombreArchivo);
-            }
-            else
-            {
-                MessageBox.Show("No hay datos para exportar.");
-            }
-        }
         private void MostrarRegistro(int fila)
         {
 
@@ -409,18 +360,6 @@ namespace LoginV1
             frmBienvenido frmBienvenido = new frmBienvenido();
             frmBienvenido.Show();
             this.Close();
-        }
-
-        private void btnExportarPDF_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Archivos PDF (*.pdf)|*.pdf";
-            sfd.FileName = "Reporte.pdf";
-
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                ExportarDataGridViewAPdf(dtgProveedor, sfd.FileName);
-            }
         }
     }
 }
