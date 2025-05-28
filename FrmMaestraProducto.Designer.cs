@@ -56,6 +56,9 @@
             this.txtStockMax = new System.Windows.Forms.TextBox();
             this.lblStockMax = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnImportar = new System.Windows.Forms.Button();
+            this.btnExportar = new System.Windows.Forms.Button();
+            this.cbTipoArchivo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgClientes)).BeginInit();
             this.gbConsultas.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +67,7 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(540, 105);
+            this.lblPrecio.Location = new System.Drawing.Point(498, 90);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(68, 27);
             this.lblPrecio.TabIndex = 2;
@@ -135,7 +138,7 @@
             // 
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraseña.Location = new System.Drawing.Point(306, 105);
+            this.lblContraseña.Location = new System.Drawing.Point(264, 90);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(61, 27);
             this.lblContraseña.TabIndex = 29;
@@ -145,7 +148,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(72, 105);
+            this.lblNombre.Location = new System.Drawing.Point(30, 90);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(88, 27);
             this.lblNombre.TabIndex = 17;
@@ -155,32 +158,32 @@
             // 
             this.dtgClientes.BackgroundColor = System.Drawing.Color.DarkGray;
             this.dtgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgClientes.Location = new System.Drawing.Point(77, 188);
+            this.dtgClientes.Location = new System.Drawing.Point(35, 168);
             this.dtgClientes.Name = "dtgClientes";
             this.dtgClientes.RowHeadersWidth = 51;
             this.dtgClientes.RowTemplate.Height = 24;
-            this.dtgClientes.Size = new System.Drawing.Size(681, 365);
+            this.dtgClientes.Size = new System.Drawing.Size(767, 390);
             this.dtgClientes.TabIndex = 28;
             this.dtgClientes.TabStop = false;
             this.dtgClientes.SelectionChanged += new System.EventHandler(this.dtgClientes_SelectionChanged);
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(311, 135);
+            this.txtStock.Location = new System.Drawing.Point(269, 120);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(189, 22);
             this.txtStock.TabIndex = 1;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(545, 135);
+            this.txtPrecio.Location = new System.Drawing.Point(503, 120);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(213, 22);
             this.txtPrecio.TabIndex = 2;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(77, 135);
+            this.txtNombre.Location = new System.Drawing.Point(35, 120);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(165, 22);
             this.txtNombre.TabIndex = 0;
@@ -262,9 +265,9 @@
             this.gbConsultas.Controls.Add(this.lblStockMax);
             this.gbConsultas.Controls.Add(this.lblStockMin);
             this.gbConsultas.Controls.Add(this.txtStockMin);
-            this.gbConsultas.Location = new System.Drawing.Point(808, 78);
+            this.gbConsultas.Location = new System.Drawing.Point(825, 79);
             this.gbConsultas.Name = "gbConsultas";
-            this.gbConsultas.Size = new System.Drawing.Size(380, 254);
+            this.gbConsultas.Size = new System.Drawing.Size(386, 254);
             this.gbConsultas.TabIndex = 33;
             this.gbConsultas.TabStop = false;
             this.gbConsultas.Text = "Para consultar:";
@@ -349,12 +352,51 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // btnImportar
+            // 
+            this.btnImportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnImportar.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportar.Location = new System.Drawing.Point(35, 576);
+            this.btnImportar.Name = "btnImportar";
+            this.btnImportar.Size = new System.Drawing.Size(175, 49);
+            this.btnImportar.TabIndex = 35;
+            this.btnImportar.Text = "Importar";
+            this.btnImportar.UseVisualStyleBackColor = false;
+            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(166)))), ((int)(((byte)(167)))));
+            this.btnExportar.Font = new System.Drawing.Font("Palatino Linotype", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportar.Location = new System.Drawing.Point(251, 576);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(175, 49);
+            this.btnExportar.TabIndex = 36;
+            this.btnExportar.Text = "Exportar a";
+            this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
+            // cbTipoArchivo
+            // 
+            this.cbTipoArchivo.FormattingEnabled = true;
+            this.cbTipoArchivo.Items.AddRange(new object[] {
+            "TXT",
+            "CSV",
+            "XML"});
+            this.cbTipoArchivo.Location = new System.Drawing.Point(453, 591);
+            this.cbTipoArchivo.Name = "cbTipoArchivo";
+            this.cbTipoArchivo.Size = new System.Drawing.Size(113, 24);
+            this.cbTipoArchivo.TabIndex = 37;
+            // 
             // FrmMaestraProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
-            this.ClientSize = new System.Drawing.Size(1227, 592);
+            this.ClientSize = new System.Drawing.Size(1232, 673);
+            this.Controls.Add(this.cbTipoArchivo);
+            this.Controls.Add(this.btnExportar);
+            this.Controls.Add(this.btnImportar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.gbConsultas);
             this.Controls.Add(this.lblPrecio);
@@ -414,5 +456,8 @@
         private System.Windows.Forms.Label lblFiltroNombre;
         private System.Windows.Forms.TextBox txtFiltroNombre;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnImportar;
+        private System.Windows.Forms.Button btnExportar;
+        private System.Windows.Forms.ComboBox cbTipoArchivo;
     }
 }
