@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
 using static System.Collections.Specialized.BitVector32;
 
 namespace LoginV1
@@ -146,6 +147,23 @@ namespace LoginV1
             FrmMaestraCliente frmMaestraCliente = new FrmMaestraCliente();  
             frmMaestraCliente.Show();
             this.Close();
+        }
+
+        private void btnImportar_Click(object sender, EventArgs e)
+        {
+            ArchivoImportador.ImportarArchivoYMostrar(dgvCarrito);
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            string tipo = cbTipoArchivo.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(tipo))
+            {
+                MessageBox.Show("Selecciona un tipo de archivo primero.", "Exportar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ArchivoExportador.Exportar(dgvCarrito, tipo);
         }
     }
 
